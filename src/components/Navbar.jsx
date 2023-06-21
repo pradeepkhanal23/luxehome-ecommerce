@@ -9,8 +9,8 @@ import { AiOutlineUserAdd, AiOutlineUserDelete } from "react-icons/ai";
 const Navbar = () => {
   return (
     <nav className="w-full ">
-      <header className="flex items-center justify-between w-full px-3 py-1 mx-auto text-white md:px-4 lg:px-10 bg-logoPurple">
-        <div className="flex items-center gap-3">
+      <header className="flex items-center justify-between w-full py-1 pr-4 mx-auto text-white md:px-4 lg:px-10 bg-logoPurple">
+        <div className="flex items-center gap-3 scale-[.9] md:scale-[1] ">
           <Link to="/">
             <Logo />
           </Link>
@@ -20,7 +20,11 @@ const Navbar = () => {
           {navlinks.map((link) => {
             const { id, path, name } = link;
             return (
-              <Link key={id} to={path}>
+              <Link
+                key={id}
+                to={path}
+                className="p-1 hover:bg-white hover:text-logoPurple hover:rounded-lg"
+              >
                 {name}
               </Link>
             );

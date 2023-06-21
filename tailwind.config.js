@@ -4,7 +4,7 @@ export default {
   theme: {
     screens: {
       sm: "450px",
-      md: "850px",
+      md: "950px",
       lg: "1224px",
       xl: "1580px",
       "2xl": "1736px",
@@ -33,6 +33,7 @@ export default {
         logoPurple: "#393f57",
         sweetOrange: "#f59e7c",
         whiteOrange: "#eddad1",
+        bodyBackground: "#f6f8fa",
       },
       boxShadow: {
         regular:
