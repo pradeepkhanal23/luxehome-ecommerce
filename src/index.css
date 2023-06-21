@@ -7,3 +7,13 @@
     font-family: "Sen", "Cabin Sketch", system-ui, sans-serif;
   }
 }
+
+@layer components {
+  .sidebar {
+    @apply bg-logoPurple text-white top-0 right-0 fixed w-full h-screen flex flex-col translate-x-full gap-y-[6rem] py-1 px-6 -z-10;
+  }
+
+  .show-sidebar {
+    @apply z-10 translate-x-0;
+  }
+}

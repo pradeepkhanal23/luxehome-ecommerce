@@ -4,16 +4,16 @@ export default {
   theme: {
     screens: {
       sm: "450px",
-      md: "800px",
-      lg: "1024px",
-      xl: "1280px",
-      "2xl": "1536px",
+      md: "850px",
+      lg: "1224px",
+      xl: "1580px",
+      "2xl": "1736px",
     },
 
     fontSize: {
       sm: ".5rem",
-      base: "1.rem",
-      lg: "1.5rem",
+      base: "1.4rem",
+      lg: "1.8rem",
       xl: "2rem",
       "2xl": "2.5rem",
       "3xl": "3rem",
