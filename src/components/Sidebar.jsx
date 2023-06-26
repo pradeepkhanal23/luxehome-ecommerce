@@ -4,20 +4,21 @@ import { AiOutlineClose } from "react-icons/ai";
 import { navlinks } from "../navlinks";
 import { AiOutlineUserAdd } from "react-icons/ai";
 import { BsCart } from "react-icons/bs";
+import { useProductsContext } from "../context/productsContext";
 
 const Sidebar = () => {
-  const isOpen = false;
+  const { isSidebarOpen, sidebarClose } = useProductsContext();
+
   return (
-    <aside
-      className={`${
-        isOpen ? "sidebar show-sidebar transition-all ease-linear" : "sidebar"
-      }`}
-    >
+    <aside className={`${isSidebarOpen ? "sidebar show-sidebar" : "sidebar "}`}>
       <div className="flex items-center justify-between gap-3">
         <Link to="/">
           <Logo />
         </Link>
-        <AiOutlineClose className="scale-[1.5] mt-1 cursor-pointer" />
+        <AiOutlineClose
+          className="scale-[1.5] mt-1 cursor-pointer"
+          onClick={sidebarClose}
+        />
       </div>
       <ul className="flex flex-col gap-2 font-bold uppercase">
         {navlinks.map((link) => {
@@ -26,6 +27,7 @@ const Sidebar = () => {
             <Link
               key={id}
               to={path}
+              onClick={sidebarClose}
               className="p-2 transition ease-out rounded-lg hover:translate-x-1 hover:bg-slate-200 hover:text-logoPurple"
             >
               {name}

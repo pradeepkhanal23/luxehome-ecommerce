@@ -2,7 +2,7 @@ const Logo = () => {
   return (
     <svg
       width="220"
-      height="80"
+      height="70"
       viewBox="0 0 267 64"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -25,9 +25,9 @@ const Logo = () => {
           width="256.379"
           height="38.7617"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix
             in="SourceAlpha"
             type="matrix"

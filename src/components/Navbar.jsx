@@ -5,27 +5,32 @@ import { Link } from "react-router-dom";
 import { navlinks } from "../navlinks";
 // eslint-disable-next-line no-unused-vars
 import { AiOutlineUserAdd, AiOutlineUserDelete } from "react-icons/ai";
+import { useProductsContext } from "../context/productsContext";
 
 const Navbar = () => {
+  const { sidebarOpen } = useProductsContext();
+
   return (
     <nav className="w-full ">
       <header className="flex items-center justify-between w-full py-1 pr-4 mx-auto text-white md:px-4 lg:px-10 bg-logoPurple">
-        <div className="flex items-center gap-3 scale-[.9] md:scale-[1] ">
+        <div className="flex items-center gap- scale-[.7] md:scale-[1] pt-1 ">
           <Link to="/">
             <Logo />
           </Link>
         </div>
 
-        <ul className="items-center justify-between hidden gap-2 font-bold uppercase md:flex md:gap-4 ">
+        <ul className="items-center justify-between hidden gap-2 font-bold uppercase flex-2 md:flex md:gap-4 relative ">
+          {/* <div className="w-full h-[3px] mb-2 bg-sweetOrange absolute -bottom-3"></div> */}
           {navlinks.map((link) => {
             const { id, path, name } = link;
             return (
               <Link
                 key={id}
                 to={path}
-                className="p-1 hover:bg-white hover:text-logoPurple hover:rounded-lg"
+                className="group transition duration-300 mt-2 mx-1"
               >
                 {name}
+                <div className="block max-w-0 group-hover:max-w-full transition-all duration-200 h-1 bg-sweetOrange"></div>
               </Link>
             );
           })}
@@ -33,23 +38,26 @@ const Navbar = () => {
 
         <div className="items-center hidden gap-5 md:flex">
           <div className="relative flex items-center gap-1">
-            <span>Cart</span>
-            <Link to="cart">
+            <Link to="cart" className="flex items-center gap-1">
+              <span>Cart</span>
               <BsCart className="scale-[1.5] " />
-              <span className="absolute flex items-center justify-center w-5 h-5 font-bold bg-white rounded-full text-logoPurple -top-3 -right-3">
+              <span className="absolute flex items-center justify-center w-5 h-5 font-bold bg-white rounded-full text-logoPurple -top-2 -right-3">
                 1
               </span>
             </Link>
           </div>
           <div className="flex items-center gap-1">
-            <span>Login</span>
-            <Link to="/">
+            <Link to="/" className="flex items-center gap-1">
+              <span>Login</span>
               <AiOutlineUserAdd className="scale-[1.5]" />
             </Link>
           </div>
         </div>
 
-        <CgMenuRightAlt className="scale-[2] mt-.5 md:hidden " />
+        <CgMenuRightAlt
+          className="scale-[1.5] mt-1 md:hidden cursor-pointer "
+          onClick={sidebarOpen}
+        />
       </header>
     </nav>
   );
