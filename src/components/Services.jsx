@@ -22,7 +22,7 @@ const Services = () => {
           return (
             <article
               key={id}
-              className="bg-white shadow-lg flex-col gap-5 m-2 h-auto w-full  rounded-lg p-3 "
+              className="bg-white shadow-lg flex-col gap-5 m-2 h-auto w-full rounded-lg p-3 "
             >
               <div className="w-full h-48 bg-whiteOrange rounded full flex items-center justify-center ">
                 {icon}
@@ -31,7 +31,7 @@ const Services = () => {
                 <h4 className="text-base mt-4 font-bold text-logoPurple uppercase">
                   {title}
                 </h4>
-                <p className="mt-2 paragraph p-4">{text}</p>
+                <p className="mt-2  p-2">{text}</p>
               </div>
             </article>
           );

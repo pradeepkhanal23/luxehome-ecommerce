@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import HomeImage1 from "../assets/hero1.jpg";
 import HomeImage2 from "../assets/hero4.jpg";
+// import HomeImage3 from "../assets/hero2.jpg";
 
 const Hero = () => {
   return (
@@ -25,6 +26,11 @@ const Hero = () => {
               alt="hero-img"
               className="w-full h-full object-cover rounded-lg"
             />
+            {/* <img
+              src={HomeImage3}
+              alt="hero-img"
+              className=" object-cover absolute top-0 -right-40 -z-10  rounded-lg w-64 h-64"
+            /> */}
             <img
               src={HomeImage2}
               alt="hero-img"
