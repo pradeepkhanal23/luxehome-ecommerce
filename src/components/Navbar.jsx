@@ -2,7 +2,7 @@ import Logo from "./Logo";
 import { CgMenuRightAlt } from "react-icons/cg";
 import { BsCart } from "react-icons/bs";
 import { Link } from "react-router-dom";
-import { navlinks } from "../navlinks";
+import { navlinks } from "../utils/constants/navlinks";
 // eslint-disable-next-line no-unused-vars
 import { AiOutlineUserAdd, AiOutlineUserDelete } from "react-icons/ai";
 import { useProductsContext } from "../context/productsContext";
@@ -11,7 +11,7 @@ const Navbar = () => {
   const { sidebarOpen } = useProductsContext();
 
   return (
-    <nav className="w-full ">
+    <nav className="w-full h-20">
       <header className="flex items-center justify-between w-full py-1 pr-4 mx-auto text-white md:px-4 lg:px-10 bg-logoPurple">
         <div className="flex items-center gap- scale-[.7] md:scale-[1] pt-1 ">
           <Link to="/">
@@ -55,7 +55,7 @@ const Navbar = () => {
         </div>
 
         <CgMenuRightAlt
-          className="scale-[1.5] mt-1 md:hidden cursor-pointer "
+          className="scale-[1.8] mt-1 md:hidden cursor-pointer "
           onClick={sidebarOpen}
         />
       </header>

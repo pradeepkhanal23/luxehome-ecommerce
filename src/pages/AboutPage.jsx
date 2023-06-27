@@ -5,8 +5,8 @@ const AboutPage = () => {
   return (
     <>
       <PageHero title="about" />
-      <section className="flex flex-col items-center h-auto max-w-[1600px] my-3 mx-auto p-2 gap-[2rem] md:flex-row ">
-        <div className="w-9/10 h-9/10 ">
+      <section className="flex flex-col justify-center  items-center  max-w-[1500px] my-3 mx-auto p-2 gap-[2rem] md:flex-row md:items-center md:justify-center md:h-[calc(100vh-9rem)] ">
+        <div className="w-9/10 h-9/10 self-start ">
           <img
             src={HeroImage}
             alt="hero-img"
@@ -14,12 +14,12 @@ const AboutPage = () => {
           />
         </div>
 
-        <article className="flex flex-col self-start p-2 ">
+        <article className="flex flex-col self-start p-2 h-full">
           <div>
-            <h2 className=" font-bold text-base text-logoPurple ">Our Story</h2>
-            <div className="underline"></div>
+            <h2 className=" title">Our Story</h2>
+            <div className="custom_underline"></div>
           </div>
-          <p className=" text- text-justify pr-2 md:pr-10 leading-tight md:leading-5 text-darkBlue mt-2 md:mt-0  ">
+          <p className=" paragraph pr-2 md:pr-10  md:leading-5  mt-2 md:mt-0  ">
             Welcome to our furniture paradise, where style meets comfort.
             Explore our curated collection of handcrafted furniture pieces that
             embody timeless elegance. From sleek and modern designs to rustic

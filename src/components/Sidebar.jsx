@@ -1,7 +1,7 @@
 import Logo from "./Logo";
 import { Link } from "react-router-dom";
 import { AiOutlineClose } from "react-icons/ai";
-import { navlinks } from "../navlinks";
+import { navlinks } from "../utils/constants/navlinks";
 import { AiOutlineUserAdd } from "react-icons/ai";
 import { BsCart } from "react-icons/bs";
 import { useProductsContext } from "../context/productsContext";

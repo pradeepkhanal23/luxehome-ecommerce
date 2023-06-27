@@ -21,7 +21,19 @@
     @apply z-10 translate-x-0 transition ease-out;
   }
 
-  .underline {
-    @apply w-14 h-1 mb-2 bg-sweetOrange;
+  .custom_underline {
+    @apply w-14 h-1 mb-2  bg-sweetOrange;
+  }
+
+  .paragraph {
+    @apply text-justify leading-tight text-darkBlue;
+  }
+
+  .btn {
+    @apply bg-logoPurple shadow-lg text-white py-1 px-6 rounded-sm;
+  }
+
+  .title {
+    @apply font-bold text-lg text-logoPurple;
   }
 }

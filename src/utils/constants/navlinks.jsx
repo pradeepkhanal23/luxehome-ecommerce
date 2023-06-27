@@ -1,3 +1,5 @@
+import React from "react";
+
 export const navlinks = [
   {
     id: 1,
@@ -13,5 +15,10 @@ export const navlinks = [
     id: 3,
     path: "about",
     name: "about",
+  },
+  {
+    id: 4,
+    path: "checkout",
+    name: "checkout",
   },
 ];
