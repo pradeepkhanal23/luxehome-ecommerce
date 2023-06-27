@@ -1,6 +1,7 @@
 import { AiOutlineCompass } from "react-icons/ai";
 import { IoEyeOutline } from "react-icons/io5";
 import { MdOutlineHistoryEdu } from "react-icons/md";
+import { GiStairsGoal } from "react-icons/gi";
 
 export const navlinks = [
   {
@@ -43,5 +44,11 @@ export const services = [
     icon: <MdOutlineHistoryEdu className="scale-[4] text-logoPurple" />,
     title: "history",
     text: "Providing unparalleled quality, design, and customer satisfaction, while exceeding expectations and enriching lives through the art of fine living.",
+  },
+  {
+    id: 4,
+    icon: <GiStairsGoal className="scale-[4] text-logoPurple" />,
+    title: "goal",
+    text: "To provide exceptional furniture that enhances living spaces, inspires creativity, and creates a lasting sense of comfort and beauty.",
   },
 ];
