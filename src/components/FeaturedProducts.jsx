@@ -5,9 +5,9 @@ const FeaturedProducts = () => {
     <section className="bg-white  px-5 pb-10">
       <div className="max-w-[1500px] mx-auto">
         <div className=" pt-5">
-          <h2 className="text-xl text-center mb-5 text-logoPurple relative font-bold">
+          <h2 className="md:text-xl text-base text-center mb-5 text-logoPurple relative font-bold">
             Featured Products
-            <span className="absolute bottom-0 top-50 -right-2 w-64 h-1 bg-sweetOrange"></span>
+            <div className="h-1 w-24 md:w-64 bg-sweetOrange mx-auto"></div>
           </h2>
         </div>
         <div className="grid grid-col-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 ">
@@ -16,7 +16,7 @@ const FeaturedProducts = () => {
               <img
                 src={featured}
                 alt="featured"
-                className="h-full w-full object-cover rounded-lg"
+                className="h-full w-full object-cover rounded-lg shadow-lg"
               />
             </div>
             <div className="flex justify-between text-sm px-3 pb-5">
@@ -29,7 +29,7 @@ const FeaturedProducts = () => {
               <img
                 src={featured}
                 alt="featured"
-                className="h-full w-full object-cover rounded-lg"
+                className="h-full w-full object-cover rounded-lg shadow-lg"
               />
             </div>
             <div className="flex justify-between text-sm px-3 pb-5">
@@ -42,7 +42,7 @@ const FeaturedProducts = () => {
               <img
                 src={featured}
                 alt="featured"
-                className="h-full w-full object-cover rounded-lg"
+                className="h-full w-full object-cover rounded-lg shadow-lg"
               />
             </div>
             <div className="flex justify-between text-sm px-3 pb-5">

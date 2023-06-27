@@ -1,14 +1,13 @@
 import { Link } from "react-router-dom";
 import HomeImage1 from "../assets/hero1.jpg";
 import HomeImage2 from "../assets/hero4.jpg";
-// import HomeImage3 from "../assets/hero2.jpg";
 
 const Hero = () => {
   return (
     <section className="h-full w-full pb-10">
       <div className="hero p-5 flex flex-col max-w-[1300px] my-4 mx-auto items-center md:flex-row md:gap-10">
         <div className="hero-left flex flex-col gap-3 mb-5 md:pr-[2rem]">
-          <h1 className="title text-xl break-words tracking-tighter">
+          <h1 className="title text-xl  break-words tracking-tighter">
             Design Your Perfect Haven
           </h1>
           <p className="paragraph py-3 pr-10 ">
@@ -17,7 +16,9 @@ const Hero = () => {
             personality and embraces comfort. Experience the art of fine living
             today.
           </p>
-          <Link className="btn w-32">Shop Now</Link>
+          <Link className="btn w-32 hover:scale-110 transition-all ease-out">
+            Shop Now
+          </Link>
         </div>
         <div className="hero-right ">
           <div className="hidden h-96 w-96 md:block relative">
@@ -26,11 +27,7 @@ const Hero = () => {
               alt="hero-img"
               className="w-full h-full object-cover rounded-lg"
             />
-            {/* <img
-              src={HomeImage3}
-              alt="hero-img"
-              className=" object-cover absolute top-0 -right-40 -z-10  rounded-lg w-64 h-64"
-            /> */}
+
             <img
               src={HomeImage2}
               alt="hero-img"
