@@ -1,4 +1,4 @@
-import Logo from "./Logo";
+import { Logo } from "../components";
 import { CgMenuRightAlt } from "react-icons/cg";
 import { BsCart } from "react-icons/bs";
 import { Link } from "react-router-dom";
@@ -11,8 +11,8 @@ const Navbar = () => {
   const { sidebarOpen } = useProductsContext();
 
   return (
-    <nav className="w-full h-20">
-      <header className="flex items-center justify-between w-full py-1 pr-4 mx-auto text-white md:px-4 lg:px-10 bg-logoPurple">
+    <nav className="w-full h-20 bg-logoPurple">
+      <header className="flex items-center justify-between w-full py-1 pr-4 mx-auto text-white md:px-4 lg:px-10 ">
         <div className="flex items-center gap- scale-[.7] md:scale-[1] pt-1 ">
           <Link to="/">
             <Logo />

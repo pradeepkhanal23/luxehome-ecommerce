@@ -8,6 +8,7 @@ import FeaturedProducts from "./FeaturedProducts";
 import Services from "./Services";
 import Contact from "./Contact";
 import Form from "./Form";
+import Logo from "./Logo";
 import ProductsDisplay from "./ProductsDisplay";
 
 export {
@@ -22,4 +23,5 @@ export {
   Contact,
   Form,
   ProductsDisplay,
+  Logo,
 };

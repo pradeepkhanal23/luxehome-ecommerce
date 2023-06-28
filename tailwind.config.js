@@ -4,15 +4,15 @@ export default {
   theme: {
     screens: {
       sm: "450px",
-      md: "1000px",
+      md: "800px",
       lg: "1224px",
       xl: "1580px",
       "2xl": "1736px",
     },
 
     fontSize: {
-      sm: "1.1rem",
-      base: "1.4rem",
+      sm: "1rem",
+      base: "1.35rem",
       lg: "1.6rem",
       xl: "2rem",
       "2xl": "2.5rem",

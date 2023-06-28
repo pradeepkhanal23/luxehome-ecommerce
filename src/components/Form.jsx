@@ -1,9 +1,9 @@
 const Form = () => {
   return (
     <form className="w-full flex-1 ">
-      <div className=" flex flex-col gap-3  h-full">
+      <div className=" flex flex-col gap-3  h-full md:sticky md:top-0">
         <div>
-          <input type="text" id="search" />
+          <input type="text" id="search" className="w-full md:w:1/2" />
         </div>
 
         <div className="flex flex-col gap-2">

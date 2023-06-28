@@ -6,11 +6,15 @@ const ProductsPage = () => {
   return (
     <>
       <PageHero title="products" />
-      <section className="w-full h-auto p-5">
-        <div className="flex flex-col md:flex-row gap-10 max-w-[2200px] mx-auto  ">
-          <Form />
-          <div className=" w-full ">
-            <article className="flex-col flex gap-3  mb-5 md:flex-row md:items-center md:justify-between">
+      <section className="w-full min-h-screen p-5">
+        <div className="flex flex-col md:flex-row gap-10 max-w-[2200px] mx-auto">
+          <div className="w-full  md:w-[250px]">
+            <div className="sticky md:pt-10 top-0">
+              <Form />
+            </div>
+          </div>
+          <div className="w-full">
+            <article className="flex-col flex gap-3 mb-5 md:flex-row md:items-center md:justify-between">
               <div className="flex  items-center gap-2 ">
                 <div className="border border-black p-2 bg-white rounded-md">
                   <BsGrid className="scale-150" />
