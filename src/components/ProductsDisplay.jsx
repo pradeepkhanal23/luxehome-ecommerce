@@ -2,8 +2,8 @@ import featured from "../assets/hero5.jpg";
 
 const ProductsDisplay = () => {
   return (
-    <section className="grid grid-cols-1 p-2 gap-x-4 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-6 ">
-      <article className="flex flex-col gap-5 w-full md:col-span-2">
+    <section className="flex-2 grid grid-cols-12 gap-4 ">
+      <article className="col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-3">
         <div className="w-auto h-64 ">
           <img
             src={featured}
@@ -16,7 +16,7 @@ const ProductsDisplay = () => {
           <p className="text-green font-bold ">$1234</p>
         </div>
       </article>
-      <article className="flex flex-col gap-5 w-full md:col-span-2">
+      <article className="col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-3">
         <div className="w-auto h-64 ">
           <img
             src={featured}
@@ -29,7 +29,7 @@ const ProductsDisplay = () => {
           <p className="text-green font-bold ">$1234</p>
         </div>
       </article>
-      <article className="flex flex-col gap-5 w-full md:col-span-2">
+      <article className="col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-3">
         <div className="w-auto h-64 ">
           <img
             src={featured}
@@ -42,7 +42,7 @@ const ProductsDisplay = () => {
           <p className="text-green font-bold ">$1234</p>
         </div>
       </article>
-      <article className="flex flex-col gap-5 w-full md:col-span-2">
+      <article className="col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-3">
         <div className="w-auto h-64 ">
           <img
             src={featured}
@@ -55,7 +55,7 @@ const ProductsDisplay = () => {
           <p className="text-green font-bold ">$1234</p>
         </div>
       </article>
-      <article className="flex flex-col gap-5 w-full md:col-span-2">
+      <article className="col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-3">
         <div className="w-auto h-64 ">
           <img
             src={featured}
@@ -68,7 +68,7 @@ const ProductsDisplay = () => {
           <p className="text-green font-bold ">$1234</p>
         </div>
       </article>
-      <article className="flex flex-col gap-5 w-full md:col-span-2">
+      <article className="col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-3">
         <div className="w-auto h-64 ">
           <img
             src={featured}
@@ -81,7 +81,7 @@ const ProductsDisplay = () => {
           <p className="text-green font-bold ">$1234</p>
         </div>
       </article>
-      <article className="flex flex-col gap-5 w-full md:col-span-2">
+      <article className="col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-3">
         <div className="w-auto h-64 ">
           <img
             src={featured}
@@ -94,7 +94,7 @@ const ProductsDisplay = () => {
           <p className="text-green font-bold ">$1234</p>
         </div>
       </article>
-      <article className="flex flex-col gap-5 w-full md:col-span-2">
+      <article className="col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-3">
         <div className="w-auto h-64 ">
           <img
             src={featured}

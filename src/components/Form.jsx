@@ -1,6 +1,6 @@
 const Form = () => {
   return (
-    <form className="w-full md:col-span-3 lg:col-span-3 xl:col-span-2 ">
+    <form className="w-full flex-1 ">
       <div className=" flex flex-col gap-3  h-full">
         <div>
           <input type="text" id="search" />

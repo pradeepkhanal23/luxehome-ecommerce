@@ -7,9 +7,9 @@ const ProductsPage = () => {
     <>
       <PageHero title="products" />
       <section className="w-full h-auto p-5">
-        <div className="grid grid-cols-1 m-5 gap-x-4 max-w-[2200px] mx-auto md:grid-cols-12 ">
+        <div className="flex flex-col md:flex-row gap-10 max-w-[2200px] mx-auto  ">
           <Form />
-          <div className=" w-full md:col-span-9">
+          <div className=" w-full ">
             <article className="flex-col flex gap-3  mb-5 md:flex-row md:items-center md:justify-between">
               <div className="flex  items-center gap-2 ">
                 <div className="border border-black p-2 bg-white rounded-md">
