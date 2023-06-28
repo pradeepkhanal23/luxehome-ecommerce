@@ -10,7 +10,7 @@
 
 @layer components {
   .sidebar {
-    @apply bg-logoPurple z-10 text-white md:hidden transition ease-in top-0 right-0 fixed w-full h-screen flex flex-col translate-x-full gap-y-[6rem] py-1 px-6;
+    @apply bg-logoPurple z-10 text-white md:hidden transition ease-in top-0 right-0 fixed w-full h-full flex flex-col translate-x-full gap-y-[6rem] py-1 px-6;
   }
 
   .active {
