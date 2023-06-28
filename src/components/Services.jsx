@@ -7,7 +7,7 @@ const Services = () => {
         <h4 className="title text-xl break-words tracking-tighter w-full mb-5 md:w-1/3">
           Furnish Your Dream
         </h4>
-        <p className="paragraph pr-2 w-full md:w-2/3">
+        <p className="paragraph pr-2 w-full md:w-2/3 ">
           With a storied legacy spanning decades, our furniture company was
           established in 1992. From our early roots as a small workshop, we have
           grown into a renowned brand, crafting exceptional furniture that
@@ -16,13 +16,13 @@ const Services = () => {
           create, bringing elegance and comfort to homes around the world.
         </p>
       </div>
-      <div className="md:grid md:grid-cols-2 gap-x-4 lg:grid-cols-3 xl:grid-cols-4">
+      <div className="grid md:grid-cols-2 gap-4 lg:grid-cols-3 xl:grid-cols-4">
         {services.map((service) => {
           const { id, title, text, icon } = service;
           return (
             <article
               key={id}
-              className="bg-white shadow-lg flex-col gap-5 m-2 h-auto w-full rounded-lg p-3 "
+              className="bg-white shadow-lg flex-col gap-5  h-auto w-full rounded-lg p-3 "
             >
               <div className="w-full h-48 bg-whiteOrange rounded full flex items-center justify-center ">
                 {icon}

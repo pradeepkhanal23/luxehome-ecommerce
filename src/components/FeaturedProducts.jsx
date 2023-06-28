@@ -2,8 +2,8 @@ import featured from "../assets/hero5.jpg";
 
 const FeaturedProducts = () => {
   return (
-    <section className="bg-white  px-5 pb-10">
-      <div className="max-w-[1500px] mx-auto">
+    <section className="bg-white p-5 pb-10">
+      <div className="max-w-[1500px] mx-auto flex flex-col">
         <div className=" pt-5">
           <h2 className="md:text-xl text-base text-center mb-5 text-logoPurple relative font-bold">
             Featured Products
@@ -11,7 +11,7 @@ const FeaturedProducts = () => {
           </h2>
         </div>
         <div className="grid grid-col-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 ">
-          <article className="card flex flex-col gap-5 ">
+          <article className=" flex flex-col gap-5 ">
             <div className="w-full h-64 ">
               <img
                 src={featured}
@@ -51,6 +51,9 @@ const FeaturedProducts = () => {
             </div>
           </article>
         </div>
+        <button className="btn w-48 mx-auto self-center mt-5 hover:scale-110 transition-all ease-in-out">
+          See All Products
+        </button>
       </div>
     </section>
   );

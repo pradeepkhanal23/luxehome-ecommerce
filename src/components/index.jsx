@@ -7,6 +7,8 @@ import Hero from "./Hero";
 import FeaturedProducts from "./FeaturedProducts";
 import Services from "./Services";
 import Contact from "./Contact";
+import Form from "./Form";
+import ProductsDisplay from "./ProductsDisplay";
 
 export {
   Footer,
@@ -18,4 +20,6 @@ export {
   FeaturedProducts,
   Services,
   Contact,
+  Form,
+  ProductsDisplay,
 };
