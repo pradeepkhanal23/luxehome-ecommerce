@@ -56,7 +56,7 @@ _Description: The homepage showcases the easy navigation bar and hero section._
 ### Product Listing Page
 
 ![Product Listing Page](/src/assets/screenshots/product-listings.png)
-_Description: The product listing page displays a grid of furniture items, allowing users to browse through different categories and explore individual products._
+_Description: The products page displays a grid of furniture items, allowing users to browse through different categories and explore individual products._
 
 ### Featured Page
 
@@ -71,7 +71,7 @@ _Description: The about page provides information about the company's background
 ### Company's Vision, Goal, and Subscription Page
 
 ![Vision, Goal, and Subscription](/src/assets/screenshots/vision-and-subscription.png)
-_Description: This page presents the company's vision and goals, along with a subscription option for users to receive updates, promotions, and special offers._
+_Description: This section of the homepage presents the company's vision and goals, along with a subscription option for users to receive updates, promotions, and special offers._
 
 ## Installation
 
