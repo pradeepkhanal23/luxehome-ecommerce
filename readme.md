@@ -18,8 +18,6 @@ A live demo of the LuxeHome Furniture project is available [here](https://luxeho
 
 - **Context API**: Context API is used for state management within the LuxeHome Furniture project. It provides a convenient and efficient way to manage global state and share data between components, ensuring a smooth and consistent user experience.
 
-- **Axios**: Axios is a JavaScript library for making HTTP requests. It was used in this project to fetch data from external APIs efficiently. Axios simplifies the process of handling asynchronous requests and responses, making it a popular choice for managing HTTP communication in JavaScript applications.
-
 ## Project Inspiration
 
 The idea for the LuxeHome Furniture project originated from John Smilga's React course, which provided invaluable insights and guidance on building robust and feature-rich ecommerce websites using React. LuxeHome Furniture utilizes an API provided by the John Smilga React course to fetch product data, ensuring a realistic and comprehensive showcase of furniture items.
