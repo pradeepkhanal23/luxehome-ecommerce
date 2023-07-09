@@ -2,7 +2,7 @@ import { Logo } from "../components";
 import { CgMenuRightAlt } from "react-icons/cg";
 import { BsCart } from "react-icons/bs";
 import { Link } from "react-router-dom";
-import { navlinks } from "../utils/constants/navlinks";
+import { navlinks } from "../utils/constants";
 // eslint-disable-next-line no-unused-vars
 import { AiOutlineUserAdd, AiOutlineUserDelete } from "react-icons/ai";
 import { useProductsContext } from "../context/productsContext";

@@ -1,4 +1,4 @@
-import { services } from "../utils/constants/navlinks";
+import { services } from "../utils/constants";
 
 const Services = () => {
   return (

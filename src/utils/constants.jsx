@@ -52,3 +52,7 @@ export const services = [
     text: "To provide exceptional furniture that enhances living spaces, inspires creativity, and creates a lasting sense of comfort and beauty.",
   },
 ];
+
+export const products_url = "https://course-api.com/react-store-products";
+
+export const single_product_url = `https://course-api.com/react-store-single-product?id=`;
