@@ -8,7 +8,10 @@ import FeaturedProducts from "./FeaturedProducts";
 import Services from "./Services";
 import Contact from "./Contact";
 import Form from "./Form";
+import Product from "./Product";
+import SingleProduct from "./SingleProduct";
 import Logo from "./Logo";
+import SkeletonLoader from "./SkeletonLoader";
 import ProductsDisplay from "./ProductsDisplay";
 
 export {
@@ -24,4 +27,7 @@ export {
   Form,
   ProductsDisplay,
   Logo,
+  Product,
+  SkeletonLoader,
+  SingleProduct,
 };
