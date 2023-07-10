@@ -1,5 +1,6 @@
 import { useProductsContext } from "../context/productsContext";
 import { Product } from "../components";
+import { Link } from "react-router-dom";
 
 const FeaturedProducts = () => {
   const {
@@ -7,7 +8,6 @@ const FeaturedProducts = () => {
     productsError: error,
     featuredProducts: featured,
   } = useProductsContext();
-  console.log(featured);
 
   if (loading) {
     return (
@@ -30,7 +30,7 @@ const FeaturedProducts = () => {
         <div className=" pt-5">
           <h2 className="md:text-xl text-base text-center mb-5 text-logoPurple relative font-bold">
             Featured Products
-            <div className="h-1 w-24 md:w-64 bg-sweetOrange mx-auto"></div>
+            <div className="h-1 w-24 md:w-48 bg-sweetOrange mx-auto"></div>
           </h2>
         </div>
         <div className="grid grid-col-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 ">
@@ -38,9 +38,12 @@ const FeaturedProducts = () => {
             return <Product key={product.id} {...product} />;
           })}
         </div>
-        <button className="btn w-48 mx-auto self-center mt-5 hover:scale-110 transition-all ease-in-out">
+        <Link
+          to="products"
+          className="btn w-48 mx-auto self-center mt-5 hover:scale-110 transition-all ease-in-out"
+        >
           See All Products
-        </button>
+        </Link>
       </div>
     </section>
   );
