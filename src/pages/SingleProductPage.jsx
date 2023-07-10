@@ -61,35 +61,35 @@ const SingleProductPage = () => {
           <article className=" grid gap-x-4 grid-cols-1 md:grid-cols-2">
             <div className="p-3 flex flex-col gap-5">
               <img
-                className="h-96 w-full object-cover "
+                className="h-96 w-full object-cover rounded-lg"
                 src={defaultImage2}
                 alt="hero-image"
               ></img>
-              <div className="grid grid-cols-5 items-center gap-5 border border-green">
+              <div className="grid grid-cols-5 items-center gap-5 ">
                 <img
                   src={defaultImage1}
                   alt="hero-image"
-                  className="h-14 w-full object-cover"
+                  className="h-14 w-full object-cover rounded-md"
                 />
                 <img
                   src={defaultImage2}
                   alt="hero-image"
-                  className="h-14 w-full object-cover"
+                  className="h-14 w-full object-cover rounded-md"
                 />
                 <img
                   src={defaultImage3}
                   alt="hero-image"
-                  className="h-14 w-full object-cover"
+                  className="h-14 w-full object-cover rounded-md"
                 />
                 <img
                   src={defaultImage4}
                   alt="hero-image"
-                  className="h-14 w-full object-cover"
+                  className="h-14 w-full object-cover rounded-md"
                 />
                 <img
                   src={defaultImage5}
                   alt="hero-image"
-                  className="h-14 w-full object-cover"
+                  className="h-14 w-full object-cover rounded-md"
                 />
               </div>
             </div>
