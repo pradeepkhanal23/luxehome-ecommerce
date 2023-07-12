@@ -19,7 +19,7 @@ const Navbar = () => {
           </Link>
         </div>
 
-        <ul className="items-center justify-between hidden gap-2 font-bold uppercase flex-2 md:flex md:gap-4 relative ">
+        <ul className="items-center justify-between hidden gap-2 font-bold capitalize flex-2 md:flex md:gap-4 relative ">
           {/* <div className="w-full h-[3px] mb-2 bg-sweetOrange absolute -bottom-3"></div> */}
           {navlinks.map((link) => {
             const { id, path, name } = link;
@@ -39,7 +39,7 @@ const Navbar = () => {
         <div className="items-center hidden gap-5 md:flex">
           <div className="relative flex items-center gap-1">
             <Link to="cart" className="flex items-center gap-1">
-              <span>Cart</span>
+              <span className="font-bold capitalize">Cart</span>
               <BsCart className="scale-[1.5] " />
               <span className="absolute flex items-center justify-center w-5 h-5 font-bold bg-white rounded-full text-logoPurple -top-2 -right-3">
                 1
@@ -48,7 +48,7 @@ const Navbar = () => {
           </div>
           <div className="flex items-center gap-1">
             <Link to="/" className="flex items-center gap-1">
-              <span>Login</span>
+              <span className="font-bold capitalize">Login</span>
               <AiOutlineUserAdd className="scale-[1.5]" />
             </Link>
           </div>

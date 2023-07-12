@@ -7,6 +7,8 @@ import Hero from "./Hero";
 import FeaturedProducts from "./FeaturedProducts";
 import Services from "./Services";
 import Contact from "./Contact";
+import CartItem from "./CartItem";
+import CartReceipt from "./CartReceipt";
 import Form from "./Form";
 import Stars from "./Stars";
 import Product from "./Product";
@@ -30,4 +32,6 @@ export {
   Product,
   SkeletonLoader,
   Stars,
+  CartItem,
+  CartReceipt,
 };

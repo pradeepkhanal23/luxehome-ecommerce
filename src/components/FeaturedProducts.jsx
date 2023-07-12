@@ -40,7 +40,7 @@ const FeaturedProducts = () => {
         </div>
         <Link
           to="products"
-          className="btn w-48 mx-auto self-center mt-5 hover:scale-110 transition-all ease-in-out"
+          className="btn w-30 mx-auto self-center mt-5 hover:scale-110 transition-all ease-in-out"
         >
           See All Products
         </Link>
