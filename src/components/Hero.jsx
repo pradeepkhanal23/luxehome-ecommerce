@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
-import HomeImage1 from "../assets/hero1.jpg";
-import HomeImage2 from "../assets/hero4.jpg";
+import { Hero1, Hero4 } from "../assets/images";
 
 const Hero = () => {
   return (
@@ -23,13 +22,13 @@ const Hero = () => {
         <div className="hero-right ">
           <div className="hidden h-96 w-96 md:block relative">
             <img
-              src={HomeImage1}
+              src={Hero1}
               alt="hero-img"
               className="w-full h-full object-cover rounded-lg"
             />
 
             <img
-              src={HomeImage2}
+              src={Hero4}
               alt="hero-img"
               className="w-64 h-32 object-cover absolute -bottom-8 -left-10 rounded-lg"
             />

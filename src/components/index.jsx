@@ -15,6 +15,9 @@ import Product from "./Product";
 import Logo from "./Logo";
 import SkeletonLoader from "./SkeletonLoader";
 import ProductsDisplay from "./ProductsDisplay";
+import ProductImages from "./ProductImages";
+import ProductInfo from "./ProductInfo";
+import AddToCart from "./AddToCart";
 
 export {
   Footer,
@@ -34,4 +37,7 @@ export {
   Stars,
   CartItem,
   CartReceipt,
+  ProductImages,
+  ProductInfo,
+  AddToCart,
 };

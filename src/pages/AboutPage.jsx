@@ -1,5 +1,5 @@
 import { PageHero } from "../components";
-import HeroImage from "../assets/hero3.jpg";
+import { Hero3 } from "../assets/images";
 
 const AboutPage = () => {
   return (
@@ -8,7 +8,7 @@ const AboutPage = () => {
       <section className="flex flex-col justify-center h-full items-center  max-w-[1800px] my-3 mx-auto p-2 gap-[2rem] md:flex-row md:items-center md:justify-center md:h-[calc(100vh-9rem)] ">
         <div className="14/15 h-14/15 self-start ">
           <img
-            src={HeroImage}
+            src={Hero3}
             alt="hero-img"
             className="w-full h-full object-cover "
           />

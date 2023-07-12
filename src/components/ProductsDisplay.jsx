@@ -1,4 +1,4 @@
-import featured from "../assets/hero5.jpg";
+import { Hero5 } from "../assets/images";
 
 const ProductsDisplay = () => {
   return (
@@ -6,7 +6,7 @@ const ProductsDisplay = () => {
       <article className="col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-3 flex flex-col gap-3">
         <div className="w-auto md:h-56 h-64 ">
           <img
-            src={featured}
+            src={Hero5}
             alt="featured"
             className="h-full w-full object-cover rounded-lg "
           />
@@ -19,7 +19,7 @@ const ProductsDisplay = () => {
       <article className="col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-3 flex flex-col gap-3">
         <div className="w-auto md:h-56 h-64 ">
           <img
-            src={featured}
+            src={Hero5}
             alt="featured"
             className="h-full w-full object-cover rounded-lg "
           />

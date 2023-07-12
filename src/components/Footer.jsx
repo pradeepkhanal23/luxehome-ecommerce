@@ -4,7 +4,7 @@ const Footer = () => {
       <div className="w-full h-14 text-center flex flex-col items-center justify-center">
         <h5>
           &copy; {new Date().getFullYear()}
-          <span className="font-bold uppercase text-sweetOrange">
+          <span className="font-bold uppercase drop-shadow-2xl text-sweetOrange">
             {" "}
             LuxeHome
           </span>

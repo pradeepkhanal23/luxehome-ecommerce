@@ -1,4 +1,4 @@
-import defaultImage from "../assets/hero2.jpg";
+import { Hero2 } from "../assets/images";
 import { RiDeleteBin7Line } from "react-icons/ri";
 
 const CartItem = () => {
@@ -7,7 +7,7 @@ const CartItem = () => {
       <div className="flex items-center gap-3 col-span-2">
         <div className="h-24 w-24 ">
           <img
-            src={defaultImage}
+            src={Hero2}
             alt="default-image"
             className="h-full w-full object-cover rounded-md"
           />
