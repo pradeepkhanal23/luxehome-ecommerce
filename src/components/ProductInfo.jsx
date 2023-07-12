@@ -1,31 +1,35 @@
+/* eslint-disable react/prop-types */
 import { Stars } from "../components";
+import { formatPrice } from "../utils/helpers";
 
-const ProductInfo = () => {
+const ProductInfo = ({ product }) => {
+  const {
+    name,
+    price,
+    description,
+    stock,
+    stars,
+    id: sku,
+    company,
+    reviews,
+  } = product;
+
   return (
     <>
-      <h2 className="text-darkPurple text-lg font-bold uppercase">
-        Modern Poster
-      </h2>
+      <h2 className="text-darkPurple text-lg font-bold uppercase">{name}</h2>
       <div className="flex gap-2 items-center">
-        <Stars />
-        <Stars />
-        <Stars />
-        <Stars />
-        <Stars />
+        <Stars stars={stars} />
         <div>
           <p className="text-sm text-darkBlue">
-            (<span>19</span> customers reviews)
+            (<span>{reviews}</span> customers reviews)
           </p>
         </div>
       </div>
-      <h5 className="font-bold text-green">$399.99</h5>
-      <p className="paragraph">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident
-        debitis voluptates suscipit in sapiente doloribus tenetur tempora
-        corporis quidem est, dolorum nam voluptatum facilis nulla eaque ducimus.
-        In, repellat nostrum.
+      <h5 className="font-bold text-green">{formatPrice(price)}</h5>
+      <p className="text-sm text-darkBlue tracking-tight text-justify">
+        {description}
       </p>
-      <div className="grid grid-cols-2  w-[80%] ">
+      <div className="grid grid-cols-2  w-[80%] text-sm">
         <div className="flex flex-col gap-2 items-center">
           <span className="text-logoPurple font-bold self-start">
             Available:
@@ -34,9 +38,11 @@ const ProductInfo = () => {
           <span className="text-logoPurple font-bold self-start">Brand:</span>
         </div>
         <div className=" flex flex-col items-center gap-2">
-          <span className="self-start text-redPink">In Stock</span>
-          <span className="self-start text-redPink">Res5Hsbah5gsa</span>
-          <span className="self-start text-redPink">Ikea</span>
+          <span className="self-start text-redPink capitalize">
+            {stock > 0 ? "in stock" : "out of stock"}
+          </span>
+          <span className="self-start text-redPink">{sku}</span>
+          <span className="self-start text-redPink capitalize">{company}</span>
         </div>
       </div>
       <div className="h-[2px] mx-auto  w-full bg-gray-300 my-1"></div>

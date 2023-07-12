@@ -20,8 +20,6 @@ const SingleProductPage = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 
-  console.log(product);
-
   useEffect(() => {
     if (error) {
       setTimeout(() => {
@@ -39,13 +37,13 @@ const SingleProductPage = () => {
     return <h1>This was an Error..</h1>;
   }
 
-  const { name, stock } = product;
+  const { name, stock, images } = product;
 
   return (
     <>
       <PageHero title={name} product />
       <section className="p-3 my-10">
-        <div className="wrapper max-w-6xl mx-auto  text-[1.2rem] flex-col flex gap-10">
+        <div className="wrapper max-w-[1200px] mx-auto  text-[1.2rem] flex-col flex gap-10">
           <div>
             <Link
               to="products"
@@ -56,10 +54,10 @@ const SingleProductPage = () => {
           </div>
 
           <section className=" grid gap-x-4 grid-cols-1 md:grid-cols-2">
-            <ProductImages />
+            <ProductImages images={images} />
 
             <article className="p-3 flex flex-col gap-2 ">
-              <ProductInfo />
+              <ProductInfo product={product} />
 
               <div className="grid grid-cols-1 gap-y-2 w-full self-start ">
                 {stock > 0 && <AddToCart />}

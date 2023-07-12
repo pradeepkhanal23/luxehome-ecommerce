@@ -6,7 +6,7 @@ const PageHero = ({ title, product }) => {
     <div className="h-40 bg-gray-200 flex  items-center uppercase text-base">
       <div className="ml-8 font-bold">
         <Link to="/">Home</Link> /{" "}
-        {product && <Link to="/products">Products /</Link>}
+        {product && <Link to="/products">Products / </Link>}
         <span className="text-logoPurple">{title}</span>
       </div>
     </div>
