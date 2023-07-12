@@ -17,32 +17,23 @@ const ProductInfo = ({ product }) => {
   return (
     <>
       <h2 className="text-darkPurple text-lg font-bold uppercase">{name}</h2>
-      <div className="flex gap-2 items-center">
-        <Stars stars={stars} />
-        <div>
-          <p className="text-sm text-darkBlue">
-            (<span>{reviews}</span> customers reviews)
-          </p>
-        </div>
-      </div>
+      <Stars stars={stars} reviews={reviews} />
       <h5 className="font-bold text-green">{formatPrice(price)}</h5>
-      <p className="text-sm text-darkBlue tracking-tight text-justify">
+      <p className="text-sm text-darkBlue tracking-tighter text-justify">
         {description}
       </p>
       <div className="grid grid-cols-2  w-[80%] text-sm">
-        <div className="flex flex-col gap-2 items-center">
-          <span className="text-logoPurple font-bold self-start">
-            Available:
-          </span>
-          <span className="text-logoPurple font-bold self-start">SKU:</span>
-          <span className="text-logoPurple font-bold self-start">Brand:</span>
+        <div className="flex flex-col gap-2 items-center text-logoPurple font-bold">
+          <span className="self-start">Available:</span>
+          <span className="self-start">SKU:</span>
+          <span className="self-start">Brand:</span>
         </div>
-        <div className=" flex flex-col items-center gap-2">
-          <span className="self-start text-redPink capitalize">
+        <div className=" flex flex-col items-center gap-2 text-redPink">
+          <span className="self-start  capitalize">
             {stock > 0 ? "in stock" : "out of stock"}
           </span>
-          <span className="self-start text-redPink">{sku}</span>
-          <span className="self-start text-redPink capitalize">{company}</span>
+          <span className="self-start ">{sku}</span>
+          <span className="self-start  capitalize">{company}</span>
         </div>
       </div>
       <div className="h-[2px] mx-auto  w-full bg-gray-300 my-1"></div>

@@ -34,6 +34,7 @@ export default {
         sweetOrange: "#f59e7c",
         whiteOrange: "#eddad1",
         bodyBackground: "#f6f8fa",
+        star: "#feb902",
       },
       boxShadow: {
         regular:

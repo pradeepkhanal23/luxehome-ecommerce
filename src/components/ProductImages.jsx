@@ -15,13 +15,13 @@ const ProductImages = ({ images = [{ url: "" }] }) => {
         {images.map((image, index) => {
           return (
             <img
-              key={image.id}
+              key={index}
               src={image.url}
               alt={image.filename}
               className={`${
                 mainImage.id === image.id
-                  ? "h-14 w-full object-cover rounded-md  border-2 border-sweetOrange"
-                  : "h-14 w-full object-cover rounded-md"
+                  ? "h-20 w-full object-cover rounded-md  cursor-pointer border-2 transition-all ease-in-out scale-[1.2] border-sweetOrange"
+                  : "h-20 w-full object-cover rounded-md cursor-pointer"
               } `}
               onClick={() => setMainImage(images[index])}
             />

@@ -6,7 +6,7 @@ const AboutPage = () => {
     <>
       <PageHero title="about" />
       <section className="flex flex-col justify-center h-full items-center  max-w-[1800px] my-3 mx-auto p-2 gap-[2rem] md:flex-row md:items-center md:justify-center md:h-[calc(100vh-9rem)] ">
-        <div className="14/15 h-14/15 self-start ">
+        <div className="w-9/10 h-9/10 self-start ">
           <img
             src={Hero3}
             alt="hero-img"

@@ -45,12 +45,12 @@ export const services = [
     title: "history",
     text: "Providing unparalleled quality, design, and customer satisfaction, while exceeding expectations and enriching lives through the art of fine living.",
   },
-  // {
-  //   id: 4,
-  //   icon: <GiStairsGoal className="scale-[4] text-logoPurple" />,
-  //   title: "goal",
-  //   text: "To provide exceptional furniture that enhances living spaces, inspires creativity, and creates a lasting sense of comfort and beauty.",
-  // },
+  {
+    id: 4,
+    icon: <GiStairsGoal className="scale-[4] text-logoPurple" />,
+    title: "goal",
+    text: "To provide exceptional furniture that enhances living spaces, inspires creativity, and creates a lasting sense of comfort and beauty.",
+  },
 ];
 
 export const products_url = "https://course-api.com/react-store-products";

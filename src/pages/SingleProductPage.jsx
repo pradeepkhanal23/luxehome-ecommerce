@@ -46,7 +46,7 @@ const SingleProductPage = () => {
         <div className="wrapper max-w-[1200px] mx-auto  text-[1.2rem] flex-col flex gap-10">
           <div>
             <Link
-              to="products"
+              to="/products"
               className="btn ml-3 w-48 mx-auto text-md  mt-5 hover:scale-110 transition-all ease-in-out"
             >
               Back To Products

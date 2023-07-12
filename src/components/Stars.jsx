@@ -1,20 +1,34 @@
-const Stars = () => {
+/* eslint-disable react/prop-types */
+import {
+  MdOutlineStarOutline,
+  MdOutlineStarHalf,
+  MdOutlineStar,
+} from "react-icons/md";
+
+const Stars = ({ stars, reviews }) => {
+  const starRating = Array.from({ length: 5 }, (_, index) => {
+    const number = index + 0.5;
+    return (
+      <span key={index}>
+        {stars >= index + 1 ? (
+          <MdOutlineStar className="scale-[1.3]" />
+        ) : stars >= number ? (
+          <MdOutlineStarHalf className="scale-[1.3]" />
+        ) : (
+          <MdOutlineStarOutline className="scale-[1.3]" />
+        )}
+      </span>
+    );
+  });
   return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      className="icon icon-tabler icon-tabler-star"
-      width="20"
-      height="20"
-      viewBox="0 0 24 24"
-      strokeWidth="1.5"
-      stroke="#feb902"
-      fill="#feb902"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-      <path d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z" />
-    </svg>
+    <article className="flex items-center gap-2">
+      <div className="text-star flex  items-center gap-2">{starRating}</div>
+      <div className="text-[1.2rem]">
+        <p className=" text-darkBlue pt-1">
+          (<span>{reviews}</span> customers reviews)
+        </p>
+      </div>
+    </article>
   );
 };
 export default Stars;

@@ -4,7 +4,7 @@ const ProductsDisplay = () => {
   return (
     <section className="flex-2 grid grid-cols-12 gap-6 ">
       <article className="col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-3 flex flex-col gap-3">
-        <div className="w-auto md:h-56 h-64 ">
+        <div className="w-auto md:h-52 h-60 ">
           <img
             src={Hero5}
             alt="featured"
