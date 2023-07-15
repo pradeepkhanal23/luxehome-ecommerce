@@ -19,7 +19,7 @@ const ProductInfo = ({ product }) => {
       <h2 className="text-darkPurple text-lg font-bold uppercase">{name}</h2>
       <Stars stars={stars} reviews={reviews} />
       <h5 className="font-bold text-green">{formatPrice(price)}</h5>
-      <p className="text-sm text-darkBlue tracking-tighter text-justify">
+      <p className="text-sm text-logoPurple mb-1  tracking-tight leading-normal text-justify">
         {description}
       </p>
       <div className="grid grid-cols-2  w-[80%] text-sm">

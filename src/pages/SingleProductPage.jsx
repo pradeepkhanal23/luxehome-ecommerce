@@ -60,7 +60,7 @@ const SingleProductPage = () => {
               <ProductInfo product={product} />
 
               <div className="grid grid-cols-1 gap-y-2 w-full self-start ">
-                {stock > 0 && <AddToCart />}
+                {stock > 0 && <AddToCart product={product} />}
               </div>
             </article>
           </section>
