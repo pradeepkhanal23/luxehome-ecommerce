@@ -1,4 +1,4 @@
-const SkeletonLoader = () => {
+const FeaturedSkeletonLoader = () => {
   return (
     <article className=" flex flex-col gap-5 bg-white shadow-md">
       <div className="w-full h-64 animate-pulse">
@@ -13,4 +13,4 @@ const SkeletonLoader = () => {
     </article>
   );
 };
-export default SkeletonLoader;
+export default FeaturedSkeletonLoader;

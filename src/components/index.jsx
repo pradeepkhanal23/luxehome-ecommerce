@@ -14,7 +14,7 @@ import Filter from "./Filter";
 import Stars from "./Stars";
 import Product from "./Product";
 import Logo from "./Logo";
-import SkeletonLoader from "./SkeletonLoader";
+import FeaturedSkeletonLoader from "./FeaturedSkeletonLoader.jsx";
 import ProductsList from "./ProductsList";
 import ProductImages from "./ProductImages";
 import ProductInfo from "./ProductInfo";
@@ -29,6 +29,7 @@ export {
   Sidebar,
   PageHero,
   Hero,
+  FeaturedSkeletonLoader,
   FeaturedProducts,
   Services,
   Contact,
@@ -36,7 +37,6 @@ export {
   ProductsList,
   Logo,
   Product,
-  SkeletonLoader,
   Stars,
   CartItem,
   CartReceipt,

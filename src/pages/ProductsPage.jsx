@@ -1,10 +1,8 @@
 import { PageHero, Filter, ProductsList } from "../components";
-import { useProductsContext } from "../context/productsContext";
+
 import { Sort } from "../components";
 
 const ProductsPage = () => {
-  const { products } = useProductsContext();
-
   return (
     <>
       <PageHero title="products" />
@@ -17,7 +15,7 @@ const ProductsPage = () => {
           </div>
           <div className="w-full">
             <Sort />
-            <ProductsList products={products} />
+            <ProductsList />
           </div>
         </div>
       </section>

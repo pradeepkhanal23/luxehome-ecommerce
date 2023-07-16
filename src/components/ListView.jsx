@@ -5,13 +5,6 @@ import { BsSearch } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
 const ListView = ({ products }) => {
-  const truncateText = (str, maxLength) => {
-    if (str.length <= maxLength) {
-      return str;
-    } else {
-      return str.substring(0, maxLength) + "...";
-    }
-  };
   return (
     <>
       {products.map((product) => {
@@ -41,9 +34,11 @@ const ListView = ({ products }) => {
                 {formatPrice(price)}
               </p>
               <p className="text-gray-700 tracking-tight  md:w-[90%]">
-                {truncateText(description, 150)}
+                {description.substring(0, 150)}...
               </p>
-              <button className="btn w-32 ">Details</button>
+              <Link to={`/products/${id}`} className="btn w-32 ">
+                Details
+              </Link>
             </div>
           </article>
         );

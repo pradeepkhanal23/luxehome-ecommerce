@@ -1,5 +1,5 @@
 import { useProductsContext } from "../context/productsContext";
-import { Product } from "../components";
+import { Product, FeaturedSkeletonLoader } from "../components";
 import { Link } from "react-router-dom";
 
 const FeaturedProducts = () => {
