@@ -28,9 +28,15 @@ const ProductInfo = ({ product }) => {
           <span className="self-start">SKU:</span>
           <span className="self-start">Brand:</span>
         </div>
-        <div className=" flex flex-col items-center gap-2 text-redPink">
-          <span className="self-start  capitalize">
-            {stock > 0 ? "in stock" : "out of stock"}
+        <div className=" flex flex-col items-center gap-2 text-logoPurple">
+          <span className="self-start  capitalize ">
+            {stock > 0 ? (
+              "in stock"
+            ) : (
+              <span className="font-bold text-red-500 capitalize">
+                out of stock
+              </span>
+            )}
           </span>
           <span className="self-start ">{sku}</span>
           <span className="self-start  capitalize">{company}</span>

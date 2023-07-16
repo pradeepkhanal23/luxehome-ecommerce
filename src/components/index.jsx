@@ -1,5 +1,6 @@
 import Footer from "./Footer";
 import Navbar from "./Navbar";
+import Sort from "./Sort";
 import RootLayout from "./RootLayout";
 import Sidebar from "./Sidebar";
 import PageHero from "./PageHero";
@@ -9,15 +10,17 @@ import Services from "./Services";
 import Contact from "./Contact";
 import CartItem from "./CartItem";
 import CartReceipt from "./CartReceipt";
-import Form from "./Form";
+import Filter from "./Filter";
 import Stars from "./Stars";
 import Product from "./Product";
 import Logo from "./Logo";
 import SkeletonLoader from "./SkeletonLoader";
-import ProductsDisplay from "./ProductsDisplay";
+import ProductsList from "./ProductsList";
 import ProductImages from "./ProductImages";
 import ProductInfo from "./ProductInfo";
 import AddToCart from "./AddToCart";
+import GridView from "./GridView";
+import ListView from "./ListView";
 
 export {
   Footer,
@@ -29,8 +32,8 @@ export {
   FeaturedProducts,
   Services,
   Contact,
-  Form,
-  ProductsDisplay,
+  Filter,
+  ProductsList,
   Logo,
   Product,
   SkeletonLoader,
@@ -40,4 +43,7 @@ export {
   ProductImages,
   ProductInfo,
   AddToCart,
+  Sort,
+  GridView,
+  ListView,
 };

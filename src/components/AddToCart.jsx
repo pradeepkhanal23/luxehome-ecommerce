@@ -75,10 +75,15 @@ const AddToCart = ({ product }) => {
         >
           <AiOutlinePlus />
         </button>
+        {amount === stock && (
+          <span className="text-red-500 text-sm ml-2 font-bold">
+            Maximum limit reached!!
+          </span>
+        )}
       </div>
-      <Link to="/cart" className="btn w-40 text-sm mt-1">
-        Add to Cart
-      </Link>
+      <button className="btn w-40 text-sm mt-1">
+        <Link to="/cart">Add to Cart</Link>
+      </button>
     </>
   );
 };

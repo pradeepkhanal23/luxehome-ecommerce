@@ -1,9 +1,14 @@
-const Form = () => {
+const Filter = () => {
   return (
     <form className="w-full flex-1 ">
       <div className=" flex flex-col gap-3  h-full md:sticky md:top-0">
         <div>
-          <input type="text" id="search" className="w-full md:w:1/2" />
+          <input
+            type="text"
+            id="search"
+            placeholder="Search..."
+            className="w-full md:w:1/2 px-2"
+          />
         </div>
 
         <div className="flex flex-col gap-2">
@@ -34,21 +39,21 @@ const Form = () => {
           <label>Colors</label>
           <div className="flex gap-1">
             <button type="button">All</button>
-            <div className="h-5 w-5 rounded-full">
+            <button className="h-5 w-5 rounded-full">
               <input type="color" value="#ff8080" />
-            </div>
-            <div className="h-5 w-5 rounded-full">
+            </button>
+            <button className="h-5 w-5 rounded-full">
               <input type="color" value="#adfe98" />
-            </div>
-            <div className="h-5 w-5 rounded-full">
+            </button>
+            <button className="h-5 w-5 rounded-full">
               <input type="color" value="#8080ff" />
-            </div>
-            <div className="h-5 w-5 rounded-full">
+            </button>
+            <button className="h-5 w-5 rounded-full">
               <input type="color" value="#808080" />
-            </div>
-            <div className="h-5 w-5 rounded-full">
+            </button>
+            <button className="h-5 w-5 rounded-full">
               <input type="color" value="#ffdc92" />
-            </div>
+            </button>
           </div>
         </div>
 
@@ -73,4 +78,4 @@ const Form = () => {
     </form>
   );
 };
-export default Form;
+export default Filter;
