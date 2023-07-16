@@ -1,12 +1,30 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
 import { BsCheck } from "react-icons/bs";
+import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 import { Link } from "react-router-dom";
 // eslint-disable-next-line react/prop-types
 const AddToCart = ({ product }) => {
-  const { colors, stock, id } = product;
+  const { colors, stock } = product;
+  console.log(stock);
 
   const [primaryColor, setPrimaryColor] = useState(colors[0]);
+  const [amount, setAmount] = useState(1);
+
+  const increase = () => {
+    if (amount < stock) {
+      setAmount((prevAmount) => {
+        return prevAmount + 1;
+      });
+    }
+  };
+  const decrease = () => {
+    if (amount > 1) {
+      setAmount((prevAmount) => {
+        return prevAmount - 1;
+      });
+    }
+  };
 
   return (
     <>
@@ -39,10 +57,24 @@ const AddToCart = ({ product }) => {
           </div>
         </div>
       </div>
-      <div className="text-logoPurple flex gap-3 items-center text-base  ">
-        <button className=" border border-black  px-3 rounded-l-lg">-</button>
-        <span className=" text-lg font-bold ">1</span>
-        <button className=" border border-black  px-3 rounded-r-lg">+</button>
+      <div className="text-logoPurple flex gap-2 items-center text-base  ">
+        <button
+          className=" border border-logoPurple p-1 rounded-l-lg "
+          onClick={decrease}
+        >
+          <AiOutlineMinus />
+        </button>
+
+        <span className=" text-lg mx-1 font-bold text-center w-8 ">
+          {amount}
+        </span>
+
+        <button
+          className=" border border-logoPurple p-1 rounded-r-lg "
+          onClick={increase}
+        >
+          <AiOutlinePlus />
+        </button>
       </div>
       <Link to="/cart" className="btn w-40 text-sm mt-1">
         Add to Cart
