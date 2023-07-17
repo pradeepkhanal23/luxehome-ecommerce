@@ -8,6 +8,8 @@ const Sort = () => {
     gridView,
     setGridView,
     setListView,
+    sort,
+    updateSort,
   } = useFilterContext();
 
   return (
@@ -41,7 +43,7 @@ const Sort = () => {
         <label className="break-keep" htmlFor="sort">
           Sort By
         </label>
-        <select id="sort" name="sort">
+        <select id="sort" name="sort" value={sort} onChange={updateSort}>
           <option value="price-lowest">Price (Lowest)</option>
           <option value="price-highest">Price (Highest)</option>
           <option value="name-a">Name (A-Z)</option>

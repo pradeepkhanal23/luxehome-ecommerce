@@ -31,6 +31,7 @@ const Navbar = () => {
               >
                 {name}
                 <div className="block max-w-0 group-hover:max-w-full transition-all duration-200 h-1 bg-sweetOrange"></div>
+                {/* <div className="block max-w-full  h-1 bg-sweetOrange"></div> */}
               </Link>
             );
           })}

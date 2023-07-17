@@ -1,4 +1,10 @@
-import { LOAD_PRODUCTS, SET_GRIDVIEW, SET_LISTVIEW } from "../actions";
+import {
+  LOAD_PRODUCTS,
+  SET_GRIDVIEW,
+  SET_LISTVIEW,
+  UPDATE_SORT,
+  SORT_PRODUCTS,
+} from "../actions";
 
 const filterReducer = (state, action) => {
   if (action.type === LOAD_PRODUCTS) {
@@ -6,6 +12,31 @@ const filterReducer = (state, action) => {
       ...state,
       allProducts: [...action.payload],
       filteredProducts: [...action.payload],
+    };
+  }
+  if (action.type === SORT_PRODUCTS) {
+    const { sort, filteredProducts } = state;
+    let tempProducts = [...filteredProducts];
+    if (sort === "price-lowest") {
+      tempProducts = tempProducts.sort((a, b) => a.price - b.price);
+    }
+    if (sort === "price-highest") {
+      tempProducts = tempProducts.sort((a, b) => b.price - a.price);
+    }
+    if (sort === "name-a") {
+      tempProducts = tempProducts.sort((a, b) => {
+        return a.name.localeCompare(b.name);
+      });
+    }
+    if (sort === "name-z") {
+      tempProducts = tempProducts.sort((a, b) => {
+        return b.name.localeCompare(a.name);
+      });
+    }
+
+    return {
+      ...state,
+      filteredProducts: tempProducts,
     };
   }
   if (action.type === SET_GRIDVIEW) {
@@ -18,6 +49,12 @@ const filterReducer = (state, action) => {
     return {
       ...state,
       gridView: false,
+    };
+  }
+  if (action.type === UPDATE_SORT) {
+    return {
+      ...state,
+      sort: action.payload,
     };
   }
   throw new Error(`No matching "${action.type}" - action type`);
