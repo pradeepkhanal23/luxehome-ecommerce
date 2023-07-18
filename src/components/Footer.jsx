@@ -5,7 +5,6 @@ const Footer = () => {
         <h5>
           &copy; {new Date().getFullYear()}
           <span className="font-bold uppercase drop-shadow-2xl text-sweetOrange">
-            {" "}
             LuxeHome
           </span>
         </h5>

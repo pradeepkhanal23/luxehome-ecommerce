@@ -5,8 +5,8 @@ const AboutPage = () => {
   return (
     <>
       <PageHero title="about" />
-      <section className="flex flex-col justify-center h-full items-center  max-w-[1500px] my-3 mx-auto p-5 gap-[2rem] md:flex-row md:items-center md:justify-center md:h-[calc(100vh-9rem)] ">
-        <div className="w-9/10 h-9/10 self-start ">
+      <section className="grid grid-cols-1 md:grid-cols-4 gap-x-6 max-w-[1500px] my-3 md:pt-[7rem] mx-auto p-5 h-[calc(100vh-7rem)]  ">
+        <div className="w-9/10 h-9/10 self-start col-span-2 ">
           <img
             src={Hero3}
             alt="hero-img"
@@ -14,7 +14,7 @@ const AboutPage = () => {
           />
         </div>
 
-        <article className="flex flex-col self-start  h-full">
+        <article className="col-span-2  h-full">
           <div>
             <h2 className=" title">Our Story</h2>
             <div className="custom_underline"></div>
