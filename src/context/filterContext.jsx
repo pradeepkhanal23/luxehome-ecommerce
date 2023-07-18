@@ -10,7 +10,9 @@ import {
   SET_LISTVIEW,
   UPDATE_SORT,
   SORT_PRODUCTS,
+  FILTER_PRODUCTS,
   UPDATE_FILTER,
+  CLEAR_FILTER,
 } from "../actions";
 
 const FilterContext = createContext();
@@ -24,10 +26,10 @@ const initialState = {
     text: "",
     category: "all",
     company: "all",
-    colors: "all",
-    price: "",
+    color: "all",
+    price: 0,
     min_price: 0,
-    max_price: "",
+    max_price: 0,
     shipping: false,
   },
 };
@@ -41,6 +43,7 @@ const FilterProvider = ({ children }) => {
   }, [products]);
 
   useEffect(() => {
+    dispatch({ type: FILTER_PRODUCTS });
     dispatch({ type: SORT_PRODUCTS });
   }, [products, state.sort]);
 
@@ -61,8 +64,26 @@ const FilterProvider = ({ children }) => {
   };
 
   const updateFilter = (e) => {
-    const name = e.target.name;
-    const value = e.target.value;
+    let name = e.target.name;
+    let value = e.target.value;
+
+    if (name === "category") {
+      value = e.target.textContent;
+    }
+
+    if (name === "color") {
+      value = e.target.dataset.color;
+    }
+
+    if (name === "price") {
+      value = Number(value);
+    }
+    if (name === "shipping") {
+      value = e.target.checked;
+    }
+    if (name === "clear-filters") {
+      dispatch({ type: CLEAR_FILTER });
+    }
 
     dispatch({
       type: UPDATE_FILTER,
@@ -73,7 +94,9 @@ const FilterProvider = ({ children }) => {
     });
   };
 
-  const clearFilter = () => {};
+  const clearFilter = () => {
+    dispatch({ type: CLEAR_FILTER });
+  };
 
   return (
     <FilterContext.Provider

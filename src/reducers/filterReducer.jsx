@@ -6,6 +6,7 @@ import {
   SORT_PRODUCTS,
   UPDATE_FILTER,
   CLEAR_FILTER,
+  FILTER_PRODUCTS,
 } from "../actions";
 
 const filterReducer = (state, action) => {
@@ -48,6 +49,12 @@ const filterReducer = (state, action) => {
       filteredProducts: tempProducts,
     };
   }
+
+  if (action.type === FILTER_PRODUCTS) {
+    return {
+      ...state,
+    };
+  }
   if (action.type === SET_GRIDVIEW) {
     return {
       ...state,
@@ -83,10 +90,8 @@ const filterReducer = (state, action) => {
         text: "",
         category: "all",
         company: "all",
-        colors: "all",
-        price: "",
-        min_price: 0,
-        max_price: "",
+        color: "all",
+        price: state.filters.max_price,
         shipping: false,
       },
     };
