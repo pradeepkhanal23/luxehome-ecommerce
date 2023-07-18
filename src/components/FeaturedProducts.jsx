@@ -9,14 +9,6 @@ const FeaturedProducts = () => {
     featuredProducts: featured,
   } = useProductsContext();
 
-  if (loading) {
-    return (
-      <>
-        <h1>Loading..</h1>
-      </>
-    );
-  }
-
   if (error) {
     return (
       <>
@@ -24,19 +16,46 @@ const FeaturedProducts = () => {
       </>
     );
   }
+
+  if (loading) {
+    return (
+      <section className="bg-white p-5 pb-10">
+        <div className="max-w-[1500px] mx-auto flex flex-col">
+          <div className="pt-5">
+            <h2 className="md:text-xl text-base text-center mb-5 text-logoPurple relative font-bold">
+              Featured Products
+              <div className="h-1 w-24 md:w-48 bg-sweetOrange mx-auto"></div>
+            </h2>
+          </div>
+          <div className="grid grid-col-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[...Array(6)].map((_, index) => (
+              <FeaturedSkeletonLoader key={index} />
+            ))}
+          </div>
+          <Link
+            to="products"
+            className="btn w-30 mx-auto self-center mt-5 hover:scale-110 transition-all ease-in-out"
+          >
+            See All Products
+          </Link>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section className="bg-white p-5 pb-10">
       <div className="max-w-[1500px] mx-auto flex flex-col">
-        <div className=" pt-5">
+        <div className="pt-5">
           <h2 className="md:text-xl text-base text-center mb-5 text-logoPurple relative font-bold">
             Featured Products
             <div className="h-1 w-24 md:w-48 bg-sweetOrange mx-auto"></div>
           </h2>
         </div>
-        <div className="grid grid-col-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 ">
-          {featured.map((product) => {
-            return <Product key={product.id} {...product} />;
-          })}
+        <div className="grid grid-col-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8">
+          {featured.map((product) => (
+            <Product key={product.id} {...product} />
+          ))}
         </div>
         <Link
           to="products"
@@ -48,4 +67,5 @@ const FeaturedProducts = () => {
     </section>
   );
 };
+
 export default FeaturedProducts;

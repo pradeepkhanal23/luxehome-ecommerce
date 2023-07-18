@@ -5,7 +5,7 @@ const AboutPage = () => {
   return (
     <>
       <PageHero title="about" />
-      <section className="grid grid-cols-1 md:grid-cols-4 gap-x-6 max-w-[1500px] my-3 md:pt-[7rem] mx-auto p-5 h-[calc(100vh-7rem)]  ">
+      <section className="grid grid-cols-1 md:grid-cols-4  md:gap-x-10 max-w-[1300px] md:my-auto md:pt-[7rem] mx-auto p-5 h-[calc(100vh-6rem)]  ">
         <div className="w-9/10 h-9/10 self-start col-span-2 ">
           <img
             src={Hero3}
