@@ -27,7 +27,7 @@ const CartPage = () => {
             <button className=" bg-logoPurple  shadow-lg text-white py-2 px-2 md:px-5 rounded-sm">
               Continue Shopping
             </button>
-            <button className="bg-red-500  shadow-lg text-white py-2 px-2 md:px-5 rounded-sm">
+            <button className="bg-red-600  shadow-lg text-white py-2 px-2 md:px-5 rounded-sm">
               Clear Shopping Cart
             </button>
           </div>

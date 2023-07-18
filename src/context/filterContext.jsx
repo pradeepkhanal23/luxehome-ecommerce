@@ -45,7 +45,7 @@ const FilterProvider = ({ children }) => {
   useEffect(() => {
     dispatch({ type: FILTER_PRODUCTS });
     dispatch({ type: SORT_PRODUCTS });
-  }, [products, state.sort]);
+  }, [products, state.sort, state.filters]);
 
   // *? we need to add products in the dependency array because initially our products are empty and our fucntionality depends upon that.
 
@@ -60,7 +60,6 @@ const FilterProvider = ({ children }) => {
     const value = e.target.value;
 
     dispatch({ type: UPDATE_SORT, payload: value });
-    console.log(value);
   };
 
   const updateFilter = (e) => {

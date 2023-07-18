@@ -51,10 +51,50 @@ const filterReducer = (state, action) => {
   }
 
   if (action.type === FILTER_PRODUCTS) {
+    const { allProducts } = state;
+    const { text, category, company, color, price, shipping } = state.filters;
+    let tempProducts = [...allProducts];
+
+    if (text) {
+      tempProducts = tempProducts.filter((product) => {
+        return product.name.toLowerCase().startsWith(text);
+      });
+    }
+    // -------------------------------------------------------------------------------------------
+    if (category !== "all") {
+      tempProducts = tempProducts.filter((product) => {
+        return product.category.toLowerCase() === category;
+      });
+    }
+    // -------------------------------------------------------------------------------------------
+    if (company !== "all") {
+      tempProducts = tempProducts.filter((product) => {
+        return product.company.toLowerCase() === company;
+      });
+    }
+    // -------------------------------------------------------------------------------------------
+    if (color !== "all") {
+      tempProducts = tempProducts.filter((product) => {
+        return product.colors.find((c) => {
+          return c === color;
+        });
+      });
+    }
+    // -------------------------------------------------------------------------------------------
+    if (shipping) {
+      tempProducts = tempProducts.filter(
+        (product) => product.shipping === true
+      );
+    }
+    // -------------------------------------------------------------------------------------------
+    tempProducts = tempProducts.filter((product) => product.price <= price);
+    // -------------------------------------------------------------------------------------------
     return {
       ...state,
+      filteredProducts: tempProducts,
     };
   }
+
   if (action.type === SET_GRIDVIEW) {
     return {
       ...state,
