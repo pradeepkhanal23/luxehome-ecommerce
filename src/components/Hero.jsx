@@ -15,7 +15,10 @@ const Hero = () => {
             personality and embraces comfort. Experience the art of fine living
             today.
           </p>
-          <Link className="btn w-32 hover:scale-110 transition-all ease-out">
+          <Link
+            to="/products"
+            className="btn w-32 hover:scale-110 transition-all ease-out"
+          >
             Shop Now
           </Link>
         </div>
