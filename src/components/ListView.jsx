@@ -36,7 +36,10 @@ const ListView = ({ products }) => {
               <p className="text-gray-700 tracking-tight  md:w-[90%]">
                 {description.substring(0, 150)}...
               </p>
-              <Link to={`/products/${id}`} className="btn w-32 ">
+              <Link
+                to={`/products/${id}`}
+                className=" w-28 bg-logoPurple text-white py-1 px-4 rounded-sm text-center"
+              >
                 Details
               </Link>
             </div>

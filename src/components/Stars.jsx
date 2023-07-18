@@ -27,7 +27,7 @@ const Stars = ({ stars, reviews }) => {
     <article className="flex items-center gap-2">
       <div className="text-star flex  items-center gap-2">{starRating}</div>
       <div className="text-[1.2rem]">
-        <p className=" text-darkBlue  pt-1">
+        <p className=" text-redPink ">
           (<span>{reviews}</span> customers reviews)
         </p>
       </div>
