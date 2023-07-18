@@ -12,7 +12,7 @@ const ProductsList = () => {
   if (!gridView) {
     return (
       <section className="flex-2 grid grid-cols-12 gap-6 ">
-        <ListView products={products} />;
+        <ListView products={products} />
       </section>
     );
   }

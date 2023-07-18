@@ -10,4 +10,6 @@ export const LOAD_PRODUCTS = "LOAD_PRODUCTS";
 export const SET_GRIDVIEW = "SET_GRIDVIEW";
 export const SET_LISTVIEW = "SET_LISTVIEW";
 export const UPDATE_SORT = "UPDATE_SORT";
+export const UPDATE_FILTER = "UPDATE_FILTER";
+export const CLEAR_FILTER = "CLEAR_FILTER";
 export const SORT_PRODUCTS = "SORT_PRODUCTS";

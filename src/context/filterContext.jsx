@@ -10,14 +10,26 @@ import {
   SET_LISTVIEW,
   UPDATE_SORT,
   SORT_PRODUCTS,
+  UPDATE_FILTER,
 } from "../actions";
 
 const FilterContext = createContext();
+
 const initialState = {
   allProducts: [],
   filteredProducts: [],
   gridView: true,
   sort: "price-lowest",
+  filters: {
+    text: "",
+    category: "all",
+    company: "all",
+    colors: "all",
+    price: "",
+    min_price: 0,
+    max_price: "",
+    shipping: false,
+  },
 };
 
 const FilterProvider = ({ children }) => {
@@ -48,9 +60,31 @@ const FilterProvider = ({ children }) => {
     console.log(value);
   };
 
+  const updateFilter = (e) => {
+    const name = e.target.name;
+    const value = e.target.value;
+
+    dispatch({
+      type: UPDATE_FILTER,
+      payload: {
+        name,
+        value,
+      },
+    });
+  };
+
+  const clearFilter = () => {};
+
   return (
     <FilterContext.Provider
-      value={{ ...state, updateSort, setGridView, setListView }}
+      value={{
+        ...state,
+        updateSort,
+        setGridView,
+        setListView,
+        updateFilter,
+        clearFilter,
+      }}
     >
       {children}
     </FilterContext.Provider>

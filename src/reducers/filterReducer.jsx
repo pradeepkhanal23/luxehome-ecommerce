@@ -4,14 +4,23 @@ import {
   SET_LISTVIEW,
   UPDATE_SORT,
   SORT_PRODUCTS,
+  UPDATE_FILTER,
+  CLEAR_FILTER,
 } from "../actions";
 
 const filterReducer = (state, action) => {
   if (action.type === LOAD_PRODUCTS) {
+    let maxPrice = action.payload.map((p) => p.price);
+    maxPrice = Math.max(...maxPrice);
     return {
       ...state,
       allProducts: [...action.payload],
       filteredProducts: [...action.payload],
+      filters: {
+        ...state.filters,
+        max_price: maxPrice,
+        price: maxPrice,
+      },
     };
   }
   if (action.type === SORT_PRODUCTS) {
@@ -55,6 +64,31 @@ const filterReducer = (state, action) => {
     return {
       ...state,
       sort: action.payload,
+    };
+  }
+  if (action.type === UPDATE_FILTER) {
+    return {
+      ...state,
+      filters: {
+        ...state.filters,
+        [action.payload.name]: action.payload.value,
+      },
+    };
+  }
+  if (action.type === CLEAR_FILTER) {
+    return {
+      ...state,
+      filters: {
+        ...state.filters,
+        text: "",
+        category: "all",
+        company: "all",
+        colors: "all",
+        price: "",
+        min_price: 0,
+        max_price: "",
+        shipping: false,
+      },
     };
   }
   throw new Error(`No matching "${action.type}" - action type`);
