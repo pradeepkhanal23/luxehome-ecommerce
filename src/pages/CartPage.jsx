@@ -4,13 +4,24 @@ import { useCartContext } from "../context/cartContext";
 
 const CartPage = () => {
   const { cart } = useCartContext();
+  console.log(cart);
 
-  if (cart.length < 0) {
+  if (cart.length === 0) {
     return (
-      <>
-        <h2>Your Cart is currently empty</h2>
-        <Link to="/products">Start Shopping</Link>
-      </>
+      <section className="h-[calc(100vh-10rem)] max-w-[1000px] text-center mx-auto  flex flex-col items-center justify-center">
+        <h2 className="text-redPink text-lg  uppercase font-bold mb-5">
+          Your Cart is currently empty
+        </h2>
+
+        <div className="hover:scale-[1.1] transition-all ease-in-out">
+          <Link
+            to="/products"
+            className="bg-logoPurple text-white py-2 px-6  rounded:md   "
+          >
+            Start Shopping
+          </Link>
+        </div>
+      </section>
     );
   }
 
