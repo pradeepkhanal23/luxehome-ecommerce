@@ -21,6 +21,7 @@ import ProductInfo from "./ProductInfo";
 import AddToCart from "./AddToCart";
 import GridView from "./GridView";
 import ListView from "./ListView";
+import CartTitle from "./CartTitle";
 
 export {
   Footer,
@@ -46,4 +47,5 @@ export {
   Sort,
   GridView,
   ListView,
+  CartTitle,
 };

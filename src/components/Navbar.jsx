@@ -23,7 +23,6 @@ const Navbar = () => {
           {/* <div className="w-full h-[3px] mb-2 bg-sweetOrange absolute -bottom-3"></div> */}
           {navlinks.map((link) => {
             const { id, path, name } = link;
-            console.log(name);
             return (
               <Link
                 key={id}

@@ -3,11 +3,11 @@ import { useState } from "react";
 import { BsCheck } from "react-icons/bs";
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 import { Link } from "react-router-dom";
+import { useCartContext } from "../context/cartContext";
 // eslint-disable-next-line react/prop-types
 const AddToCart = ({ product }) => {
-  const { colors, stock } = product;
-  console.log(stock);
-
+  const { colors, stock, id } = product;
+  const { addToCart } = useCartContext();
   const [primaryColor, setPrimaryColor] = useState(colors[0]);
   const [amount, setAmount] = useState(1);
 
@@ -82,7 +82,12 @@ const AddToCart = ({ product }) => {
         )}
       </div>
       <button className="btn w-40 text-sm mt-1">
-        <Link to="/cart">Add to Cart</Link>
+        <Link
+          to="/cart"
+          onClick={() => addToCart(id, primaryColor, amount, product)}
+        >
+          Add to Cart
+        </Link>
       </button>
     </>
   );
