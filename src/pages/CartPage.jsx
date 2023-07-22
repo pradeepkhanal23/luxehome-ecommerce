@@ -4,19 +4,18 @@ import { useCartContext } from "../context/cartContext";
 
 const CartPage = () => {
   const { cart } = useCartContext();
-  console.log(cart);
 
   if (cart.length === 0) {
     return (
       <section className="h-[calc(100vh-10rem)] max-w-[1000px] text-center mx-auto  flex flex-col items-center justify-center">
-        <h2 className="text-redPink text-lg  uppercase font-bold mb-5">
+        <h2 className="text-redPink text-base  uppercase font-bold mb-5">
           Your Cart is currently empty
         </h2>
 
         <div className="hover:scale-[1.1] transition-all ease-in-out">
           <Link
             to="/products"
-            className="bg-logoPurple text-white py-2 px-6  rounded:md   "
+            className="bg-logoPurple text-white py-2 px-6 md:text-base rounded-md"
           >
             Start Shopping
           </Link>
@@ -35,16 +34,16 @@ const CartPage = () => {
           <CartItem />
           <div className="h-[2px] mx-auto block w-full  bg-gray-300 my-5"></div>
           <div className="flex items-center justify-between gap-2">
-            <button className=" bg-logoPurple  shadow-lg text-white py-2 px-2 md:px-5 rounded-sm">
+            <button className=" bg-logoPurple  shadow-lg text-white py-2 px-2 md:px-5 rounded-md">
               Continue Shopping
             </button>
-            <button className="bg-red-600  shadow-lg text-white py-2 px-2 md:px-5 rounded-sm">
+            <button className="bg-red-600  shadow-lg text-white py-2 px-2 md:px-5 rounded-md">
               Clear Shopping Cart
             </button>
           </div>
           <CartReceipt />
           <div className="flex justify-end w-full ">
-            <button className="capitalize md:text-base w-full rounded-sm md:w-1/2 btn">
+            <button className="capitalize md:text-base py-2 w-full rounded-md md:w-1/2 btn">
               Login
             </button>
           </div>

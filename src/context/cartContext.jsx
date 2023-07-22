@@ -1,5 +1,6 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/prop-types */
-import { createContext, useContext, useReducer } from "react";
+import { createContext, useContext, useReducer, useEffect } from "react";
 import reducer from "../reducers/cartReducer";
 import {
   ADD_TO_CART,
@@ -10,8 +11,19 @@ import {
 
 const CartContext = createContext();
 
+const getLocalStorageItems = () => {
+  let cart = localStorage.getItem("cart");
+  if (cart) {
+    return JSON.parse(localStorage.getItem("cart"));
+  } else {
+    return [];
+  }
+};
+
+console.log(getLocalStorageItems());
+
 const initialState = {
-  cart: [],
+  cart: getLocalStorageItems(),
   total_amount: 0,
   total_items: 0,
   shipping_fee: 300,
@@ -31,6 +43,10 @@ export const CartProvider = ({ children }) => {
       },
     });
   };
+
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(state.cart));
+  }, [state.cart]);
 
   const removeItem = (id) => {
     dispatch({ type: REMOVE_CART_ITEM, payload: id });

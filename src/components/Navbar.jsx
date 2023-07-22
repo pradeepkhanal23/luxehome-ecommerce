@@ -6,9 +6,11 @@ import { navlinks } from "../utils/constants";
 // eslint-disable-next-line no-unused-vars
 import { AiOutlineUserAdd, AiOutlineUserDelete } from "react-icons/ai";
 import { useProductsContext } from "../context/productsContext";
+import { useCartContext } from "../context/cartContext";
 
 const Navbar = () => {
   const { sidebarOpen } = useProductsContext();
+  const { cart } = useCartContext();
 
   return (
     <nav className="w-full h-20 bg-logoPurple">
@@ -43,7 +45,7 @@ const Navbar = () => {
               <span className="font-bold capitalize">Cart</span>
               <BsCart className="scale-[1.5] " />
               <span className="absolute flex items-center justify-center w-5 h-5 font-bold bg-white rounded-full text-logoPurple -top-2 -right-3">
-                1
+                {cart.length}
               </span>
             </Link>
           </div>

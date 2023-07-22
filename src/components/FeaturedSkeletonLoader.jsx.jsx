@@ -1,6 +1,6 @@
 const FeaturedSkeletonLoader = () => {
   return (
-    <article className=" flex flex-col gap-5 bg-white shadow-md">
+    <article className=" flex flex-col gap-5 bg-white shadow-md ">
       <div className="w-full h-64 animate-pulse">
         <div className="h-full w-full object-cover rounded-lg ">
           <div className="bg-gray-100 h-full w-full mx-auto "></div>

@@ -7,7 +7,7 @@ const CartItem = () => {
   return (
     <>
       {cart.map((item) => {
-        const { name, id, price, image, amount } = item;
+        const { name, id, price, image, amount, color } = item;
         return (
           <article
             key={id}
@@ -27,7 +27,10 @@ const CartItem = () => {
                 </h4>
                 <div className="flex items-center gap-2">
                   <span className="text-gray-600">Color:</span>
-                  <div className="bg-black h-3 w-3 md:h-4 md:w-4 rounded-sm"></div>
+                  <div
+                    className=" h-3 w-3 md:h-4 md:w-4 rounded-sm"
+                    style={{ background: color }}
+                  ></div>
                 </div>
                 <p className="text-green font-bold block md:hidden">
                   {formatPrice(price)}
