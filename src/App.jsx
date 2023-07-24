@@ -9,6 +9,7 @@ import {
   Checkout,
 } from "./pages";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import LoginPage from "./pages/LoginPage";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
       {
         path: "products",
         element: <Products />,
+      },
+      {
+        path: "login",
+        element: <LoginPage />,
       },
       {
         path: "products/:id",

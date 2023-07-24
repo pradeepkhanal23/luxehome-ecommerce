@@ -5,9 +5,11 @@ import { navlinks } from "../utils/constants";
 import { AiOutlineUserAdd } from "react-icons/ai";
 import { BsCart } from "react-icons/bs";
 import { useProductsContext } from "../context/productsContext";
+import { useCartContext } from "../context/cartContext";
 
 const Sidebar = () => {
   const { isSidebarOpen, sidebarClose } = useProductsContext();
+  const { total_items } = useCartContext();
 
   return (
     <aside className={`${isSidebarOpen ? "sidebar show-sidebar" : "sidebar "}`}>
@@ -44,14 +46,14 @@ const Sidebar = () => {
           >
             <span>Cart</span>
             <BsCart className="scale-[1.5] " />
-            <span className="absolute flex items-center justify-center w-5 h-5 font-bold bg-white rounded-full text-logoPurple -top-3 -right-3">
-              1
+            <span className="absolute flex items-center justify-center w-6 h-6  font-bold bg-white rounded-full text-logoPurple -top-4 -right-4">
+              {total_items}
             </span>
           </Link>
         </div>
         <div className="flex items-center gap-1">
           <Link
-            to="/"
+            to="/login"
             className="flex items-center gap-2 "
             onClick={sidebarClose}
           >

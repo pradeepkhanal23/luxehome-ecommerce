@@ -5,6 +5,7 @@ import Checkout from "./CheckoutPage";
 import Error from "./ErrorPage";
 import PrivateRoute from "./ProductsPage";
 import Products from "./ProductsPage";
+import Login from "./LoginPage";
 import SingleProduct from "./SingleProductPage";
 
 export {
@@ -16,4 +17,5 @@ export {
   PrivateRoute,
   Products,
   SingleProduct,
+  Login,
 };

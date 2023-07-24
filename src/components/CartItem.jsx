@@ -1,6 +1,7 @@
 import { RiDeleteBin7Line } from "react-icons/ri";
 import { useCartContext } from "../context/cartContext";
 import { formatPrice } from "../utils/helpers";
+import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 
 const CartItem = () => {
   const { cart, removeItem, toggleAmount, total_amount } = useCartContext();
@@ -49,10 +50,16 @@ const CartItem = () => {
             <p className="text-green font-bold hidden md:block">
               {formatPrice(price)}
             </p>
-            <div className="flex items-center font-bold gap-2 text-[1.2rem] md:text-base ">
-              <button onClick={() => increase(id, "decrease")}>-</button>
+            <div className="flex items-center font-bold gap-2 text-[1.3rem]  ">
+              <AiOutlineMinus
+                className="cursor-pointer"
+                onClick={() => increase(id, "decrease")}
+              ></AiOutlineMinus>
               <span>{amount}</span>
-              <button onClick={() => decrease(id, "increase")}>+</button>
+              <AiOutlinePlus
+                className="cursor-pointer"
+                onClick={() => decrease(id, "increase")}
+              ></AiOutlinePlus>
             </div>
             <p className="text-redPink font-bold hidden md:block">
               {formatPrice(price * amount)}

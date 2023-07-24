@@ -10,7 +10,7 @@ import { useCartContext } from "../context/cartContext";
 
 const Navbar = () => {
   const { sidebarOpen } = useProductsContext();
-  const { cart } = useCartContext();
+  const { total_items } = useCartContext();
 
   return (
     <nav className="w-full h-20 bg-logoPurple">
@@ -39,18 +39,18 @@ const Navbar = () => {
           })}
         </ul>
 
-        <div className="items-center hidden gap-5 md:flex">
+        <div className="items-center hidden gap-7 md:flex">
           <div className="relative flex items-center gap-1">
             <Link to="cart" className="flex items-center gap-1">
               <span className="font-bold capitalize">Cart</span>
               <BsCart className="scale-[1.5] " />
-              <span className="absolute flex items-center justify-center w-5 h-5 font-bold bg-white rounded-full text-logoPurple -top-2 -right-3">
-                {cart.length}
+              <span className="absolute flex  items-center justify-center w-6 h-6 font-bold bg-white rounded-full text-logoPurple -top-2 -right-4">
+                {total_items}
               </span>
             </Link>
           </div>
           <div className="flex items-center gap-1">
-            <Link to="/" className="flex items-center gap-1">
+            <Link to="/login" className="flex items-center gap-1">
               <span className="font-bold capitalize">Login</span>
               <AiOutlineUserAdd className="scale-[1.5]" />
             </Link>
