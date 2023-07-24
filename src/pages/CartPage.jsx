@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
 import { PageHero, CartItem, CartReceipt, CartTitle } from "../components";
 import { useCartContext } from "../context/cartContext";
+import { useUserContext } from "../context/userContext";
 
 const CartPage = () => {
   const { cart, clearCart } = useCartContext();
+  const { loginWithRedirect, myUser } = useUserContext();
 
   if (cart.length === 0) {
     return (
@@ -49,12 +51,21 @@ const CartPage = () => {
           </div>
           <CartReceipt />
           <div className="flex justify-end w-full ">
-            <Link
-              to="/login"
-              className="capitalize text-center text-sm py-3 md:py-2 md:text-base w-full rounded-md md:w-1/2 btn"
-            >
-              Login
-            </Link>
+            {myUser ? (
+              <Link
+                to="/checkout"
+                className="capitalize text-center text-sm py-3 md:py-2 md:text-base w-full rounded-md md:w-1/2 btn"
+              >
+                Proceed to checkout
+              </Link>
+            ) : (
+              <Link
+                onClick={loginWithRedirect}
+                className="capitalize text-center text-sm py-3 md:py-2 md:text-base w-full rounded-md md:w-1/2 btn"
+              >
+                Login
+              </Link>
+            )}
           </div>
         </div>
       </section>

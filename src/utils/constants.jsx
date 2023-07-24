@@ -19,11 +19,6 @@ export const navlinks = [
     path: "about",
     name: "about",
   },
-  // {
-  //   id: 4,
-  //   path: "checkout",
-  //   name: "checkout",
-  // },
 ];
 
 export const services = [

@@ -1,15 +1,17 @@
 import Logo from "./Logo";
 import { Link } from "react-router-dom";
-import { AiOutlineClose } from "react-icons/ai";
+import { AiOutlineClose, AiOutlineUserDelete } from "react-icons/ai";
 import { navlinks } from "../utils/constants";
 import { AiOutlineUserAdd } from "react-icons/ai";
 import { BsCart } from "react-icons/bs";
 import { useProductsContext } from "../context/productsContext";
 import { useCartContext } from "../context/cartContext";
+import { useUserContext } from "../context/userContext";
 
 const Sidebar = () => {
   const { isSidebarOpen, sidebarClose } = useProductsContext();
   const { total_items } = useCartContext();
+  const { loginWithRedirect, myUser, logout } = useUserContext();
 
   return (
     <aside className={`${isSidebarOpen ? "sidebar show-sidebar" : "sidebar "}`}>
@@ -36,6 +38,15 @@ const Sidebar = () => {
             </Link>
           );
         })}
+        {myUser && (
+          <Link
+            to="/checkout"
+            className="p-2 transition ease-out rounded-lg hover:translate-x-1 hover:bg-slate-200 hover:text-logoPurple "
+            onClick={sidebarClose}
+          >
+            Checkout
+          </Link>
+        )}
       </ul>
       <div className="flex items-center justify-center gap-10 ">
         <div className="relative flex items-center gap-1">
@@ -52,14 +63,26 @@ const Sidebar = () => {
           </Link>
         </div>
         <div className="flex items-center gap-1">
-          <Link
-            to="/login"
-            className="flex items-center gap-2 "
-            onClick={sidebarClose}
-          >
-            <span>Login</span>
-            <AiOutlineUserAdd className="scale-[1.5]" />
-          </Link>
+          {myUser ? (
+            <Link
+              className="flex items-center gap-2 "
+              onClick={() => {
+                sidebarClose();
+                logout({ returnTo: window.location.origin });
+              }}
+            >
+              <span>Logout</span>
+              <AiOutlineUserDelete className="scale-[1.5]" />
+            </Link>
+          ) : (
+            <Link
+              className="flex items-center gap-2 "
+              onClick={loginWithRedirect}
+            >
+              <span>Login</span>
+              <AiOutlineUserAdd className="scale-[1.5]" />
+            </Link>
+          )}
         </div>
       </div>
     </aside>

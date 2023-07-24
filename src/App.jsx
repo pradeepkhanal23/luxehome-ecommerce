@@ -6,10 +6,11 @@ import {
   Cart,
   Products,
   SingleProduct,
+  PrivateRoute,
   Checkout,
+  AuthWrapper,
 } from "./pages";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import LoginPage from "./pages/LoginPage";
 
 const router = createBrowserRouter([
   {
@@ -26,10 +27,6 @@ const router = createBrowserRouter([
         element: <Products />,
       },
       {
-        path: "login",
-        element: <LoginPage />,
-      },
-      {
         path: "products/:id",
         element: <SingleProduct />,
       },
@@ -41,16 +38,27 @@ const router = createBrowserRouter([
         path: "cart",
         element: <Cart />,
       },
+      // Use PrivateRoute for the checkout page
       {
         path: "checkout",
-        element: <Checkout />,
+        element: (
+          <PrivateRoute>
+            <Checkout />
+          </PrivateRoute>
+        ),
       },
     ],
   },
 ]);
 
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <>
+      <AuthWrapper>
+        <RouterProvider router={router} />
+      </AuthWrapper>
+    </>
+  );
 }
 
 export default App;
