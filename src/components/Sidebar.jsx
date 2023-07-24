@@ -37,7 +37,11 @@ const Sidebar = () => {
       </ul>
       <div className="flex items-center justify-center gap-10 ">
         <div className="relative flex items-center gap-1">
-          <Link to="cart" className="flex items-center gap-2 ">
+          <Link
+            to="cart"
+            className="flex items-center gap-2 "
+            onClick={sidebarClose}
+          >
             <span>Cart</span>
             <BsCart className="scale-[1.5] " />
             <span className="absolute flex items-center justify-center w-5 h-5 font-bold bg-white rounded-full text-logoPurple -top-3 -right-3">
@@ -46,7 +50,11 @@ const Sidebar = () => {
           </Link>
         </div>
         <div className="flex items-center gap-1">
-          <Link to="/" className="flex items-center gap-2 ">
+          <Link
+            to="/"
+            className="flex items-center gap-2 "
+            onClick={sidebarClose}
+          >
             <span>Login</span>
             <AiOutlineUserAdd className="scale-[1.5]" />
           </Link>

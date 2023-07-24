@@ -3,7 +3,7 @@ import { PageHero, CartItem, CartReceipt, CartTitle } from "../components";
 import { useCartContext } from "../context/cartContext";
 
 const CartPage = () => {
-  const { cart } = useCartContext();
+  const { cart, clearCart } = useCartContext();
 
   if (cart.length === 0) {
     return (
@@ -34,16 +34,22 @@ const CartPage = () => {
           <CartItem />
           <div className="h-[2px] mx-auto block w-full  bg-gray-300 my-5"></div>
           <div className="flex items-center justify-between gap-2">
-            <button className=" bg-logoPurple  shadow-lg text-white py-2 px-2 md:px-5 rounded-md">
-              Continue Shopping
-            </button>
-            <button className="bg-red-600  shadow-lg text-white py-2 px-2 md:px-5 rounded-md">
+            <Link to="/products">
+              <button className=" bg-logoPurple  shadow-lg text-white py-2 px-2 md:px-5 rounded-md">
+                Continue Shopping
+              </button>
+            </Link>
+
+            <button
+              className="bg-red-600  shadow-lg text-white py-2 px-2 md:px-5 rounded-md"
+              onClick={clearCart}
+            >
               Clear Shopping Cart
             </button>
           </div>
           <CartReceipt />
           <div className="flex justify-end w-full ">
-            <button className="capitalize md:text-base py-2 w-full rounded-md md:w-1/2 btn">
+            <button className="capitalize text-sm py-3 md:py-2 md:text-base w-full rounded-md md:w-1/2 btn">
               Login
             </button>
           </div>

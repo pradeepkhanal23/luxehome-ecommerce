@@ -1,4 +1,8 @@
+import { useCartContext } from "../context/cartContext";
+import { formatPrice } from "../utils/helpers";
+
 const CartReceipt = () => {
+  const { total_amount, shipping_fee } = useCartContext();
   return (
     <>
       <article className="flex flex-row justify-end ">
@@ -9,14 +13,14 @@ const CartReceipt = () => {
               <span>Shipping Fee:</span>
             </div>
             <div className="flex flex-col items-center gap-2">
-              <h4 className="font-bold">$30.99</h4>
-              <h4>$3.5</h4>
+              <h4 className="font-bold">{formatPrice(total_amount)}</h4>
+              <h4>{formatPrice(shipping_fee)}</h4>
             </div>
           </div>
           <div className="h-[2px] mx-auto block w-[80%]  bg-gray-300 "></div>
-          <div className="flex font-bold text-base items-center justify-around md:px-0  px-10 md:w-2/3 mx-auto py-5">
-            <span>Order Total :</span>
-            <h4>$36.98</h4>
+          <div className="flex w-full  font-bold text-base items-center justify-between md:px-0  px-10 md:w-2/3 mx-auto py-5">
+            <span>Order Total:</span>
+            <h4>{formatPrice(total_amount + shipping_fee)}</h4>
           </div>
         </div>
       </article>

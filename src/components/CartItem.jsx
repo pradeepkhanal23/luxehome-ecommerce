@@ -3,11 +3,20 @@ import { useCartContext } from "../context/cartContext";
 import { formatPrice } from "../utils/helpers";
 
 const CartItem = () => {
-  const { cart } = useCartContext();
+  const { cart, removeItem, toggleAmount, total_amount } = useCartContext();
+
+  const increase = (id, value) => {
+    toggleAmount(id, value);
+  };
+  const decrease = (id, value) => {
+    toggleAmount(id, value);
+  };
+
   return (
     <>
       {cart.map((item) => {
         const { name, id, price, image, amount, color } = item;
+
         return (
           <article
             key={id}
@@ -41,15 +50,18 @@ const CartItem = () => {
               {formatPrice(price)}
             </p>
             <div className="flex items-center font-bold gap-2 text-[1.2rem] md:text-base ">
-              <button>-</button>
+              <button onClick={() => increase(id, "decrease")}>-</button>
               <span>{amount}</span>
-              <button>+</button>
+              <button onClick={() => decrease(id, "increase")}>+</button>
             </div>
             <p className="text-redPink font-bold hidden md:block">
-              {formatPrice(price)}
+              {formatPrice(price * amount)}
             </p>
             <div className="h-7 cursor-pointer w-7 md:w-10 md:h-10 bg-red-600 text-white flex items-center justify-center rounded-md">
-              <RiDeleteBin7Line className="scale-[1.2]  " />
+              <RiDeleteBin7Line
+                className="scale-[1.2]  "
+                onClick={() => removeItem(id)}
+              />
             </div>
           </article>
         );
