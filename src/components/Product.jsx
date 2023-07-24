@@ -12,7 +12,7 @@ const Product = ({ image, name, price, id }) => {
           <img
             src={image}
             alt="featured"
-            className="h-full w-full object-cover rounded-lg shadow-lg"
+            className="h-full w-full object-cover rounded-lg "
           />
 
           <div className="bg-[rgba(0,0,0,0.4)] text-whiteOrange rounded-lg opacity-0 flex items-center justify-center transition duration-300 ease-in-out hover:opacity-100 h-full w-full absolute inset-0 overflow-hidden bg-fixed">

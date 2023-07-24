@@ -39,7 +39,7 @@ const Navbar = () => {
           })}
           {myUser && (
             <Link
-              to="/checkout"
+              to="checkout"
               className="group transition duration-300 mt-2 mx-1 "
             >
               Checkout

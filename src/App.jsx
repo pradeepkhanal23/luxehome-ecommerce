@@ -8,7 +8,6 @@ import {
   SingleProduct,
   PrivateRoute,
   Checkout,
-  AuthWrapper,
 } from "./pages";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
@@ -54,9 +53,7 @@ const router = createBrowserRouter([
 function App() {
   return (
     <>
-      <AuthWrapper>
-        <RouterProvider router={router} />
-      </AuthWrapper>
+      <RouterProvider router={router} />
     </>
   );
 }

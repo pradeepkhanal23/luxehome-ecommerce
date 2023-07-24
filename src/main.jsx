@@ -7,6 +7,7 @@ import FilterProvider from "./context/filterContext.jsx";
 import { CartProvider } from "./context/cartContext.jsx";
 import UserProvider from "./context/userContext.jsx";
 import { Auth0Provider } from "@auth0/auth0-react";
+import { AuthWrapper } from "./pages/index.jsx";
 
 //dev-exs8rhtwcmvakpxh.au.auth0.com
 
@@ -22,15 +23,17 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       }}
       cacheLocation="localstorage"
     >
-      <UserProvider>
-        <ProductsProvider>
-          <FilterProvider>
-            <CartProvider>
-              <App />
-            </CartProvider>
-          </FilterProvider>
-        </ProductsProvider>
-      </UserProvider>
+      <AuthWrapper>
+        <UserProvider>
+          <ProductsProvider>
+            <FilterProvider>
+              <CartProvider>
+                <App />
+              </CartProvider>
+            </FilterProvider>
+          </ProductsProvider>
+        </UserProvider>
+      </AuthWrapper>
     </Auth0Provider>
   </React.StrictMode>
 );
