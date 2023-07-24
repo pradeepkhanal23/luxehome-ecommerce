@@ -30,7 +30,11 @@ const SingleProductPage = () => {
   }, [error]);
 
   if (loading) {
-    return <h1>Loading...</h1>;
+    return (
+      <div className="flex items-center justify-center h-screen">
+        <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-sweetOrange"></div>
+      </div>
+    );
   }
 
   if (error) {
@@ -53,13 +57,13 @@ const SingleProductPage = () => {
             </Link>
           </div>
 
-          <section className=" grid gap-x-4 grid-cols-1 md:grid-cols-2">
+          <section className="grid gap-x-4 grid-cols-1 md:grid-cols-2">
             <ProductImages images={images} />
 
-            <article className="p-3 flex flex-col gap-2 ">
+            <article className="p-3 flex flex-col gap-2">
               <ProductInfo product={product} />
 
-              <div className="grid grid-cols-1 gap-y-2 w-full self-start ">
+              <div className="grid grid-cols-1 gap-y-2 w-full self-start">
                 {stock > 0 && <AddToCart product={product} />}
               </div>
             </article>
@@ -69,4 +73,5 @@ const SingleProductPage = () => {
     </>
   );
 };
+
 export default SingleProductPage;

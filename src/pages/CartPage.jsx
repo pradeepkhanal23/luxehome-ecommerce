@@ -8,7 +8,7 @@ const CartPage = () => {
   if (cart.length === 0) {
     return (
       <section className="h-[calc(100vh-10rem)] max-w-[1000px] text-center mx-auto  flex flex-col items-center justify-center">
-        <h2 className="text-redPink text-base  uppercase font-bold mb-5">
+        <h2 className="text-logoPurple text-base  uppercase font-bold mb-5">
           Your Cart is currently empty
         </h2>
 
