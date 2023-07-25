@@ -1,5 +1,0 @@
-[dev]
-  targetPort = 8888
-
-[build]
-functions = "./functions"
