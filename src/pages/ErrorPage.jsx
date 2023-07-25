@@ -10,9 +10,9 @@ const ErrorPage = () => {
       <Navbar />
       <section
         id="error-page"
-        className="flex flex-col items-center justify-center w-screen h-auto mt-5 md:mt-10 p-5 text-center text-base font-bold text-red-600 bg-bodyBackground"
+        className="flex flex-col items-center justify-center w-screen h-[calc(100vh-12.5rem)] mt-5 md:mt-10 p-5 text-center text-base font-bold text-red-600 bg-bodyBackground"
       >
-        <h1 className="text-2xl">{error.status}</h1>
+        <h1 className="text-5xl">{error.status}</h1>
         <h3>Sorry, an unexpected error has occurred.</h3>
         <p>
           <i>{error.data}</i>
