@@ -17,7 +17,7 @@ const CartPage = () => {
         <div className="hover:scale-[1.1] transition-all ease-in-out">
           <Link
             to="/products"
-            className="bg-logoPurple text-white py-2 px-6 md:text-base rounded-md"
+            className="bg-logoPurple text-white py-2 px-6  rounded-md"
           >
             Start Shopping
           </Link>
@@ -54,14 +54,14 @@ const CartPage = () => {
             {myUser ? (
               <Link
                 to="/checkout"
-                className="capitalize text-center text-sm py-3 md:py-2 md:text-base w-full rounded-md md:w-1/2 btn"
+                className="capitalize text-center text-sm py-3 md:py-2  w-full rounded-md md:w-1/2 btn"
               >
                 Proceed to checkout
               </Link>
             ) : (
               <Link
                 onClick={loginWithRedirect}
-                className="capitalize text-center text-sm py-3 md:py-2 md:text-base w-full rounded-md md:w-1/2 btn"
+                className="capitalize text-center text-sm py-3 md:py-2  w-full rounded-md md:w-1/2 btn"
               >
                 Login
               </Link>

@@ -22,6 +22,7 @@ import AddToCart from "./AddToCart";
 import GridView from "./GridView";
 import ListView from "./ListView";
 import CartTitle from "./CartTitle";
+import StripeCheckout from "./StripeCheckout";
 
 export {
   Footer,
@@ -48,4 +49,5 @@ export {
   GridView,
   ListView,
   CartTitle,
+  StripeCheckout,
 };
