@@ -16,8 +16,8 @@ import { AuthWrapper } from "./pages/index.jsx";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <Auth0Provider
-      domain="dev-exs8rhtwcmvakpxh.au.auth0.com"
-      clientId="8Udq0tz6dl8llq5RrXr2NW2e3yD7Ot5R"
+      domain={import.meta.env.VITE_AUTH_DOMAIN}
+      clientId={import.meta.env.VITE_AUTH_CLIENT_ID}
       authorizationParams={{
         redirect_uri: window.location.origin,
       }}
