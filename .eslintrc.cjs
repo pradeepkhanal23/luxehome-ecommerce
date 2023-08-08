@@ -13,4 +13,11 @@ module.exports = {
     "react-refresh/only-export-components": "warn",
     "no-unused-vars": "off",
   },
+  overrides: [
+    {
+      files: ["functions/**/*.js"],
+      extends: "./.eslintrc.functions.js",
+      // Add any specific rules or overrides for the function files if needed
+    },
+  ],
 };

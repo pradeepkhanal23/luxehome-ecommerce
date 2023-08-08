@@ -8,7 +8,7 @@
   },
   "commonjs": {
     "include": [
-      "functions/*"
+      "functions/**"
     ]
   },
   "scripts": {
@@ -23,6 +23,7 @@
     "@stripe/react-stripe-js": "^2.1.1",
     "@stripe/stripe-js": "^1.54.2",
     "axios": "^1.4.0",
+    "dotenv": "^16.3.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.9.0",
