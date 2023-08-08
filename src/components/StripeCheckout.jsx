@@ -16,7 +16,7 @@ const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLIC_KEY);
 
 const CheckoutForm = () => {
   const { myUser } = useUserContext();
-  const { cart, total_amount, shipping_fee, clearCart } = useCartContext();
+  const { total_amount, shipping_fee, clearCart } = useCartContext();
   const navigate = useNavigate();
 
   const stripe = useStripe();
@@ -45,9 +45,7 @@ const CheckoutForm = () => {
     const { error } = await stripe.confirmPayment({
       //`Elements` instance that was used to create the Payment Element
       elements,
-      confirmParams: {
-        return_url: "http://localhost:8888/checkout",
-      },
+      redirect: "if_required",
     });
 
     if (error) {
@@ -57,6 +55,12 @@ const CheckoutForm = () => {
       setMessage(error.message);
     } else {
       setSucceeded(true);
+      setMessage(null);
+
+      setTimeout(() => {
+        navigate("/");
+        clearCart();
+      }, 7000);
     }
   };
 
