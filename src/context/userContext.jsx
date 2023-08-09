@@ -9,7 +9,7 @@ import React from "react";
 const UserContext = createContext();
 
 const UserProvider = ({ children }) => {
-  const { loginWithRedirect, user, logout } = useAuth0();
+  const { loginWithRedirect, user, logout, isAuthenticated } = useAuth0();
   const [myUser, setMyUser] = React.useState(null);
 
   React.useEffect(() => {
@@ -22,6 +22,7 @@ const UserProvider = ({ children }) => {
         loginWithRedirect,
         logout,
         myUser,
+        isAuthenticated,
       }}
     >
       {children}
