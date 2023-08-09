@@ -73,7 +73,7 @@ const Navbar = () => {
             ) : (
               <button
                 className="flex items-center gap-1"
-                onClick={loginWithRedirect}
+                onClick={() => loginWithRedirect()}
               >
                 <span className="font-bold capitalize">Login</span>
                 <AiOutlineUserAdd className="scale-[1.5]" />

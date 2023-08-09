@@ -9,10 +9,6 @@ import UserProvider from "./context/userContext.jsx";
 import { Auth0Provider } from "@auth0/auth0-react";
 import { AuthWrapper } from "./pages/index.jsx";
 
-//dev-exs8rhtwcmvakpxh.au.auth0.com
-
-//8Udq0tz6dl8llq5RrXr2NW2e3yD7Ot5R
-
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <Auth0Provider
@@ -21,7 +17,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       authorizationParams={{
         redirect_uri: window.location.origin,
       }}
-      cacheLocation="localstorage"
     >
       <AuthWrapper>
         <UserProvider>

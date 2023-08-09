@@ -1,6 +1,7 @@
 import { PageHero, StripeCheckout } from "../components";
 import { useCartContext } from "../context/cartContext";
 import { Link } from "react-router-dom";
+import { useAuth0 } from "@auth0/auth0-react";
 
 const CheckoutPage = () => {
   const { cart } = useCartContext();
@@ -23,6 +24,7 @@ const CheckoutPage = () => {
       </section>
     );
   }
+
   return (
     <>
       <PageHero title="checkout" />
