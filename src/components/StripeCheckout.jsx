@@ -70,7 +70,7 @@ const CheckoutForm = () => {
   // h-[calc(100vh-20rem)]
 
   return (
-    <div className="flex my-3 mx-auto h-[calc(100vh-20rem)] gap-y-5 flex-col justify-center items-center w-full">
+    <div className="flex my-auto mx-auto h-[calc(100vh-18rem)] gap-y-1 flex-col justify-center items-center w-full">
       {succeeded ? (
         <article className=" w-[95%] max-w-lg mx-auto text-logoPurple font-bold capitalize md:text-base">
           <h4>Thank You for Shopping with us</h4>
@@ -106,11 +106,7 @@ const CheckoutForm = () => {
               <div
                 class="inline-block h-4 w-4 animate-spin rounded-full border-2 border-solid border-current border-r-transparent align-[-0.125em] text-info motion-reduce:animate-[spin_1.5s_linear_infinite]"
                 role="status"
-              >
-                {/* <span class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">
-                  Loading...
-                </span> */}
-              </div>
+              ></div>
             </>
           ) : (
             "Submit"
