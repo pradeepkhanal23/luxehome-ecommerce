@@ -46,7 +46,7 @@ const CheckoutForm = () => {
     const { error } = await stripe.confirmPayment({
       //`Elements` instance that was used to create the Payment Element
       elements,
-      redirect: "if_required",
+      // redirect: "if_required",
     });
 
     if (error) {
