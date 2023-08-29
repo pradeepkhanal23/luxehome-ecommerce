@@ -1,7 +1,5 @@
 # LuxeHome Furniture Ecommerce Website
 
-Note: This project is currently under development.
-
 ![LuxeHome Ecommerce](./src/assets/screenshots/homepage.png)
 
 ## Description
@@ -10,7 +8,7 @@ LuxeHome Furniture is an ambitious ecommerce website project designed to offer a
 
 ## Live Demo
 
-A live demo of the LuxeHome Furniture project is available [here](https://luxehome-ecommerce.netlify.app). Please note that the live demo is a work in progress and may not fully showcase all the intended features or finalized design elements.
+A live demo of the LuxeHome Furniture project is available [here](https://luxehome-ecommerce.netlify.app).
 
 ## Technologies Used
 
@@ -55,12 +53,12 @@ _Description: The homepage showcases the easy navigation bar and hero section._
 
 ### Product Listing Page
 
-![Product Listing Page](/src/assets/screenshots/product-listings.png)
+![Product Listing Page](/src/assets/screenshots/product%20listing%20page.png)
 _Description: The products page displays a grid of furniture items, allowing users to browse through different categories and explore individual products._
 
 ### Featured Page
 
-![Featured Page](/src/assets/screenshots/featured-products.png)
+![Featured Page](/src/assets/screenshots/featured%20page.png)
 _Description: The featured product section in the homepage displays few featured products along with a button to explore all the other available products._
 
 ### About Page
