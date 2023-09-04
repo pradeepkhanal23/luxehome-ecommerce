@@ -71,13 +71,6 @@ const Navbar = () => {
                 <AiOutlineUserDelete className="scale-[1.5]" />
               </button>
             ) : (
-              // <button
-              //   className="flex items-center gap-1"
-              //   onClick={loginWithRedirect}
-              // >
-              //   <span className="font-bold capitalize">Login</span>
-              //   <AiOutlineUserAdd className="scale-[1.5]" />
-              // </button>
               <p
                 onClick={() => {
                   loginWithRedirect();

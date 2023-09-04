@@ -3,8 +3,32 @@
 import { formatPrice } from "../utils/helpers";
 import { BsSearch } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import { useProductsContext } from "../context/productsContext";
 
 const ListView = ({ products }) => {
+  const { productsLoading: loading } = useProductsContext();
+
+  if (loading) {
+    return (
+      <>
+        <article
+          className="col-span-12 md:col-span-12 md:flex-row flex flex-col gap-3"
+          key="loading-skeleton"
+        >
+          <div className="w-auto md:h-52 h-60 md:w-96 relative cursor-pointer">
+            <div className="animate-pulse bg-gray-300 h-full w-full object-cover rounded-lg"></div>
+          </div>
+          <div className="flex flex-col gap-2 justify-between md:w-full text-sm pb-5 md:gap-1">
+            <div className="animate-pulse bg-gray-300 h-6 w-4/5"></div>
+            <div className="animate-pulse bg-gray-300 h-5 w-2/4"></div>
+            <div className="animate-pulse bg-gray-300 h-4 w-3/4"></div>
+            <div className="animate-pulse bg-gray-300 h-8 w-20"></div>
+          </div>
+        </article>
+      </>
+    );
+  }
   return (
     <>
       {products.map((product) => {
