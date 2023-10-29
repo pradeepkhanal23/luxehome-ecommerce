@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { PageHero, ProductImages, ProductInfo, AddToCart } from "../components";
 import { useProductsContext } from "../context/productsContext";
 import { single_product_url as url } from "../utils/constants";
+import Loader from "../components/Loader";
 
 const SingleProductPage = () => {
   const { id } = useParams();
@@ -30,11 +31,7 @@ const SingleProductPage = () => {
   }, [error]);
 
   if (loading) {
-    return (
-      <div className="flex items-center justify-center h-screen">
-        <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-sweetOrange"></div>
-      </div>
-    );
+    return <Loader />;
   }
 
   if (error) {

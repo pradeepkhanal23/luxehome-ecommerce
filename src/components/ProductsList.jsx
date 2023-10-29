@@ -5,6 +5,10 @@ import { useFilterContext } from "../context/filterContext";
 const ProductsList = () => {
   const { filteredProducts: products, gridView } = useFilterContext();
 
+  if (products == []) {
+    return <Loader />;
+  }
+
   if (products.length < 1) {
     return <h5>Sorry No products found</h5>;
   }
