@@ -2,6 +2,7 @@ import { RiDeleteBin7Line } from "react-icons/ri";
 import { useCartContext } from "../context/cartContext";
 import { formatPrice } from "../utils/helpers";
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
+import { useModalContext } from "../context/modalContext";
 
 const CartItem = () => {
   const { cart, removeItem, toggleAmount, total_amount } = useCartContext();
@@ -67,7 +68,9 @@ const CartItem = () => {
             <div className="h-7 cursor-pointer w-7 md:w-10 md:h-10 bg-red-600 text-white flex items-center justify-center rounded-md">
               <RiDeleteBin7Line
                 className="scale-[1.2]  "
-                onClick={() => removeItem(id)}
+                onClick={() => {
+                  removeItem(id);
+                }}
               />
             </div>
           </article>

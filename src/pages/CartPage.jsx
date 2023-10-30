@@ -1,24 +1,29 @@
 import { Link } from "react-router-dom";
-import { PageHero, CartItem, CartReceipt, CartTitle } from "../components";
+import {
+  PageHero,
+  CartItem,
+  CartReceipt,
+  CartTitle,
+  Modal,
+} from "../components";
 import { useCartContext } from "../context/cartContext";
 import { useUserContext } from "../context/userContext";
+import { useModalContext } from "../context/modalContext";
 
 const CartPage = () => {
-  const { cart, clearCart } = useCartContext();
+  const { cart } = useCartContext();
   const { loginWithRedirect, myUser } = useUserContext();
+  const { modalOpen, openModal, closeModal } = useModalContext();
 
   if (cart.length === 0) {
     return (
-      <section className="h-[calc(100vh-10rem)] max-w-[1000px] text-center mx-auto  flex flex-col items-center justify-center">
+      <section className="h-[calc(100vh-10rem)] max-w-[1000px] text-center mx-auto  flex flex-col items-center justify-center ">
         <h2 className="text-logoPurple text-base  uppercase font-bold mb-5">
           Your Cart is currently empty
         </h2>
 
         <div className="hover:scale-[1.1] transition-all ease-in-out">
-          <Link
-            to="/products"
-            className="bg-logoPurple text-white py-2 px-6  rounded-md"
-          >
+          <Link to="/products" className="btn">
             Start Shopping
           </Link>
         </div>
@@ -44,11 +49,14 @@ const CartPage = () => {
 
             <button
               className="bg-red-600  shadow-lg text-white py-2 px-2 md:px-5 rounded-md"
-              onClick={clearCart}
+              onClick={() => {
+                openModal();
+              }}
             >
               Clear Shopping Cart
             </button>
           </div>
+
           <CartReceipt />
           <div className="flex justify-end w-full ">
             {myUser ? (
@@ -67,6 +75,13 @@ const CartPage = () => {
               </Link>
             )}
           </div>
+          {modalOpen && (
+            <Modal
+              closeModal={closeModal}
+              message="Are you sure want to clear the cart?"
+              title="Clear Cart"
+            />
+          )}
         </div>
       </section>
     </>

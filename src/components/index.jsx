@@ -23,8 +23,10 @@ import GridView from "./GridView";
 import ListView from "./ListView";
 import CartTitle from "./CartTitle";
 import StripeCheckout from "./StripeCheckout";
+import Modal from "./Modal";
 
 export {
+  Modal,
   Footer,
   Navbar,
   RootLayout,
