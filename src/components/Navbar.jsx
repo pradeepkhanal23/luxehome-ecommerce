@@ -83,7 +83,7 @@ const Navbar = () => {
                 <AiOutlineUserDelete className="scale-[1.5]" />
               </button>
             ) : (
-              <buttons
+              <button
                 onClick={() => {
                   loginWithRedirect();
                 }}
@@ -91,7 +91,7 @@ const Navbar = () => {
               >
                 <span className="font-bold capitalize">Login</span>
                 <AiOutlineUserAdd className="scale-[1.5]" />
-              </buttons>
+              </button>
             )}
           </div>
         </div>

@@ -36,7 +36,7 @@ const GridView = ({ products }) => {
           const { id, name, price, image } = product;
           return (
             <article
-              className="col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-3 flex flex-col gap-3"
+              className="col-span-12 md:col-span-6 lg:col-span-3 xl:col-span-3 flex flex-col gap-3"
               key={id}
             >
               <div className="w-auto md:h-52 h-60 cursor-pointer relative">

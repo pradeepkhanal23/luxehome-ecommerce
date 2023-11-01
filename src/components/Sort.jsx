@@ -13,7 +13,7 @@ const Sort = () => {
   } = useFilterContext();
 
   return (
-    <article className="flex-col flex gap-3 mb-5 md:flex-row md:items-center md:justify-between">
+    <article className="flex-col  flex gap-3 mb-5 md:flex-row md:items-center md:justify-between">
       <div className="flex  items-center gap-2 ">
         <div
           className={`${

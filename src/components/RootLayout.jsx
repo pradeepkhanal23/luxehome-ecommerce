@@ -7,9 +7,7 @@ const RootLayout = () => {
       <Navbar />
       <Sidebar />
       <Outlet />
-      <div className="relative bottom-0 left-0 right-0">
-        <Footer />
-      </div>
+      <Footer />
     </main>
   );
 };

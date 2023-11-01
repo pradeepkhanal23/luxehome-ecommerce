@@ -22,7 +22,7 @@
   }
 
   .custom_underline {
-    @apply w-24 h-1 mb-2  bg-sweetOrange;
+    @apply w-24 h-1  bg-sweetOrange;
   }
 
   .paragraph {
