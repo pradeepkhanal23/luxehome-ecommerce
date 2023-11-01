@@ -1,5 +1,5 @@
 import { useProductsContext } from "../context/productsContext";
-import { Product } from "../components";
+import { FeaturedSkeletonLoader, Product } from "../components";
 import { Link } from "react-router-dom";
 
 const FeaturedProducts = () => {
@@ -12,7 +12,7 @@ const FeaturedProducts = () => {
   if (error) {
     return (
       <>
-        <h1>Error....</h1>
+        <h1 className="text-center">Error Fetching Featured Products</h1>
       </>
     );
   }

@@ -11,9 +11,9 @@ import { useUserContext } from "../context/userContext";
 import { useModalContext } from "../context/modalContext";
 
 const CartPage = () => {
-  const { cart } = useCartContext();
+  const { cart, clearCart } = useCartContext();
   const { loginWithRedirect, myUser } = useUserContext();
-  const { modalOpen, openModal, closeModal } = useModalContext();
+  const { isModalOpen, openModal, closeModal } = useModalContext();
 
   if (cart.length === 0) {
     return (
@@ -56,6 +56,14 @@ const CartPage = () => {
               Clear Shopping Cart
             </button>
           </div>
+          {isModalOpen && (
+            <Modal
+              closeModal={closeModal}
+              message="Are you sure want to clear the cart?"
+              title="Clear Cart"
+              action={clearCart}
+            />
+          )}
 
           <CartReceipt />
           <div className="flex justify-end w-full ">
@@ -75,13 +83,6 @@ const CartPage = () => {
               </Link>
             )}
           </div>
-          {modalOpen && (
-            <Modal
-              closeModal={closeModal}
-              message="Are you sure want to clear the cart?"
-              title="Clear Cart"
-            />
-          )}
         </div>
       </section>
     </>

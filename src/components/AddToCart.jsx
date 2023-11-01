@@ -4,12 +4,21 @@ import { BsCheck } from "react-icons/bs";
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { useCartContext } from "../context/cartContext";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 // eslint-disable-next-line react/prop-types
 const AddToCart = ({ product }) => {
   const { colors, stock, id } = product;
   const { addToCart } = useCartContext();
   const [primaryColor, setPrimaryColor] = useState(colors[0]);
   const [amount, setAmount] = useState(1);
+
+  const notification = () => {
+    toast.success("Item added to the cart", {
+      position: toast.POSITION.BOTTOM_RIGHT,
+      autoClose: 2000,
+    });
+  };
 
   const increase = () => {
     if (amount < stock) {
@@ -81,13 +90,19 @@ const AddToCart = ({ product }) => {
           </span>
         )}
       </div>
-      <button className="btn w-40 text-sm mt-1">
+      <button
+        className="btn w-40 text-sm mt-1"
+        onClick={() => {
+          notification();
+          addToCart(id, primaryColor, amount, product);
+        }}
+      >
         <Link
-          to="/cart"
-          onClick={() => addToCart(id, primaryColor, amount, product)}
+        // to="/cart"
         >
           Add to Cart
         </Link>
+        <ToastContainer />
       </button>
     </>
   );
