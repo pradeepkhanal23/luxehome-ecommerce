@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { useState } from "react";
+// import { useState } from "react";
 import { Logo } from "../components";
 import { CgMenuRightAlt } from "react-icons/cg";
 import { BsCart } from "react-icons/bs";
@@ -11,7 +11,6 @@ import { useCartContext } from "../context/cartContext";
 import { useUserContext } from "../context/userContext";
 
 const Navbar = () => {
-  const [activeLink, setActiveLink] = useState("home");
   const { sidebarOpen } = useProductsContext();
   const { total_items } = useCartContext();
   const { loginWithRedirect, myUser, logout } = useUserContext();
@@ -84,13 +83,15 @@ const Navbar = () => {
                 <AiOutlineUserDelete className="scale-[1.5]" />
               </button>
             ) : (
-              <p
+              <button
                 onClick={() => {
                   loginWithRedirect();
                 }}
+                className="flex items-center gap-1"
               >
-                Login
-              </p>
+                <span className="font-bold capitalize">Login</span>
+                <AiOutlineUserAdd className="scale-[1.5]" />
+              </button>
             )}
           </div>
         </div>
