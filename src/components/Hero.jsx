@@ -17,7 +17,7 @@ const Hero = () => {
           </p>
           <Link
             to="/products"
-            className="btn w-32 hover:scale-110 transition-all ease-out"
+            className="btn w-36 hover:scale-110 transition-all ease-out"
           >
             Shop Now
           </Link>

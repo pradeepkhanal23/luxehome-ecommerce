@@ -1,8 +1,9 @@
 /* eslint-disable no-unused-vars */
+import { useState } from "react";
 import { Logo } from "../components";
 import { CgMenuRightAlt } from "react-icons/cg";
 import { BsCart } from "react-icons/bs";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { navlinks } from "../utils/constants";
 import { AiOutlineUserAdd, AiOutlineUserDelete } from "react-icons/ai";
 import { useProductsContext } from "../context/productsContext";
@@ -10,6 +11,7 @@ import { useCartContext } from "../context/cartContext";
 import { useUserContext } from "../context/userContext";
 
 const Navbar = () => {
+  const [activeLink, setActiveLink] = useState("home");
   const { sidebarOpen } = useProductsContext();
   const { total_items } = useCartContext();
   const { loginWithRedirect, myUser, logout } = useUserContext();
@@ -17,7 +19,7 @@ const Navbar = () => {
   return (
     <nav className="w-full h-20 bg-logoPurple">
       <header className="flex items-center justify-between w-full py-1 pr-4 mx-auto text-white md:px-4 lg:px-10 ">
-        <div className="flex items-center gap- scale-[.7] md:scale-[1] pt-1 ">
+        <div className="flex items-center  scale-[.7] md:scale-[.9] pt-1 ">
           <Link to="/">
             <Logo />
           </Link>
@@ -27,24 +29,35 @@ const Navbar = () => {
           {navlinks.map((link) => {
             const { id, path, name } = link;
             return (
-              <Link
+              <NavLink
                 key={id}
                 to={path}
-                className="group transition duration-300 mt-2 mx-1"
+                className="text-white "
+                style={({ isActive }) => {
+                  return {
+                    borderBottom: isActive ? "2px solid #FFD6A5" : "",
+                    fontWeight: isActive ? "bold" : "",
+                  };
+                }}
               >
                 {name}
-                <div className="block max-w-0 group-hover:max-w-full transition-all duration-200 h-1 bg-sweetOrange"></div>
-              </Link>
+              </NavLink>
             );
           })}
           {myUser && (
-            <Link
+            <NavLink
               to="checkout"
-              className="group transition duration-300 mt-2 mx-1 "
+              className="text-white "
+              style={({ isActive }) => {
+                return {
+                  borderBottom: isActive ? "2px solid #FFD6A5" : "",
+                  fontWeight: isActive ? "bold" : "",
+                };
+              }}
             >
               Checkout
-              <div className="block max-w-0 group-hover:max-w-full transition-all duration-200 h-1 bg-sweetOrange"></div>
-            </Link>
+              {/* <div className="block max-w-0 group-hover:max-w-full transition-all duration-200 h-1 bg-sweetOrange"></div> */}
+            </NavLink>
           )}
         </ul>
 
