@@ -1,6 +1,7 @@
 import { useProductsContext } from "../context/productsContext";
 import { FeaturedSkeletonLoader, Product } from "../components";
 import { Link } from "react-router-dom";
+import { PlaceholderImage } from "../assets/images";
 
 const FeaturedProducts = () => {
   const {
@@ -8,49 +9,6 @@ const FeaturedProducts = () => {
     productsError: error,
     featuredProducts: featured,
   } = useProductsContext();
-
-  if (error) {
-    return (
-      <>
-        <h1 className="text-center">Error Fetching Featured Products</h1>
-      </>
-    );
-  }
-
-  if (loading) {
-    return (
-      <section className="bg-white p-5 pb-10">
-        <div className="max-w-[1500px] mx-auto flex flex-col">
-          <div className="pt-5">
-            <div className="md:text-xl text-base text-center mb-5 text-logoPurple relative font-bold">
-              <h2 className="md:text-xl text-base text-center mb-5 text-logoPurple relative font-bold">
-                Featured Products
-                <div className="h-1 w-24 md:w-48 bg-sweetOrange mx-auto"></div>
-              </h2>
-            </div>
-          </div>
-          <div className="grid grid-col-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8">
-            {/* Loading Skeleton for product cards */}
-            {Array.from({ length: 6 }, (_, index) => (
-              <div
-                key={`loading-skeleton-${index}`}
-                className="animate-pulse bg-gray-300 rounded-lg flex m-2"
-              >
-                <div className="h-60 md:h-72 w-full"></div>
-                <div className="h-16 w-full"></div>
-                <div className="h-8 w-3/4 mx-auto mt-3"></div>
-                <div className="h-8 w-1/4 mx-auto mt-2"></div>
-              </div>
-            ))}
-          </div>
-          <div className=" w-30 mx-auto self-center mt-5 hover:scale-110 transition-all ease-in-out">
-            {/* Loading Skeleton for the "See All Products" button */}
-            <div className="animate-pulse bg-gray-300 h-12 w-40 rounded-full"></div>
-          </div>
-        </div>
-      </section>
-    );
-  }
 
   return (
     <section className="bg-white p-5 pb-10">
@@ -62,9 +20,34 @@ const FeaturedProducts = () => {
           </h2>
         </div>
         <div className="grid grid-col-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8">
-          {featured.map((product) => (
-            <Product key={product.id} {...product} />
-          ))}
+          {error ? (
+            <>
+              {Array.from({ length: 6 }, (_, index) => (
+                <div
+                  key={index + "error"}
+                  className="flex  gap-5 bg-gray-100 items-center justify-center shadow-sm border-gray-300 border-2 m-2 h-64 w-full"
+                >
+                  <img
+                    src={PlaceholderImage}
+                    alt="featured-products"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              ))}
+            </>
+          ) : loading ? (
+            <>
+              {Array.from({ length: 6 }, (_, index) => (
+                <FeaturedSkeletonLoader key={index + "skeleton"} />
+              ))}
+            </>
+          ) : (
+            <>
+              {featured.map((product) => (
+                <Product key={product.id} {...product} />
+              ))}
+            </>
+          )}
         </div>
         <Link
           to="products"

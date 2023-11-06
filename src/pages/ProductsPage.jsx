@@ -1,6 +1,9 @@
-import { PageHero, Filter, ProductsList } from "../components";
+import { PageHero, Filter, FeaturedSkeletonLoader } from "../components";
+import { lazy, Suspense } from "react";
 
 import { Sort } from "../components";
+
+const ProductsList = lazy(() => import("../components/ProductsList"));
 
 const ProductsPage = () => {
   return (
@@ -15,7 +18,9 @@ const ProductsPage = () => {
           </div>
           <div className="w-full">
             <Sort />
-            <ProductsList />
+            <Suspense fallback={<FeaturedSkeletonLoader />}>
+              <ProductsList />
+            </Suspense>
           </div>
         </div>
       </section>
