@@ -34,7 +34,7 @@ const Navbar = () => {
                 className="text-white "
                 style={({ isActive }) => {
                   return {
-                    borderBottom: isActive ? "2px solid #FFD6A5" : "",
+                    borderBottom: isActive ? "3px solid #f59e7c" : "",
                     fontWeight: isActive ? "bold" : "",
                   };
                 }}

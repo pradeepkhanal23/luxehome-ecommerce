@@ -18,7 +18,7 @@ import { products_url as url } from "../utils/constants";
 
 const initialState = {
   isSidebarOpen: false,
-  productsLoading: false,
+  productsLoading: true,
   productsError: false,
   products: [],
   featuredProducts: [],
@@ -41,10 +41,12 @@ export const ProductsProvider = ({ children }) => {
   };
 
   const fetchProducts = async (url) => {
-    dispatch({ type: GET_PRODUCTS_BEGIN });
+    // dispatch({ type: GET_PRODUCTS_BEGIN });
     try {
+      console.log("fetching products");
       const response = await axios(url);
       const products = response.data;
+
       dispatch({ type: GET_PRODUCTS_SUCCESS, payload: products });
     } catch (error) {
       dispatch({ type: GET_PRODUCTS_ERROR });

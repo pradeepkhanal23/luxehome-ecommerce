@@ -7,7 +7,7 @@ const ProductsList = () => {
 
   return (
     <>
-      <section className="flex-2 grid grid-cols-12 gap-6 ">
+      <section className="flex-2 grid grid-cols-12 gap-8 ">
         {gridView ? (
           <GridView products={products} />
         ) : (

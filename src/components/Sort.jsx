@@ -40,7 +40,7 @@ const Sort = () => {
       <h4 className="break-keep">
         {`${
           products.length === 0
-            ? "Loading.."
+            ? "Loading..."
             : products.length + " products found"
         }`}
       </h4>

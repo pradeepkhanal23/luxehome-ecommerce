@@ -93,7 +93,7 @@ const AddToCart = ({ product }) => {
         )}
       </div>
       <div
-        className="btn w-40 text-sm mt-1"
+        className="btn w-40 text-sm mt-1 text-center"
         onClick={() => {
           notification();
           addToCart(id, primaryColor, amount, product);
