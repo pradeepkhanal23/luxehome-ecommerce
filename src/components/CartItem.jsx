@@ -19,9 +19,10 @@ const CartItem = () => {
   const notify = () => {
     toast.error("Item deleted succesfully", {
       position: toast.POSITION.BOTTOM_RIGHT,
-      icon: false,
+      icon: true,
       pauseOnFocusLoss: false,
       autoClose: 1000,
+      hideProgressBar: true,
     });
   };
 

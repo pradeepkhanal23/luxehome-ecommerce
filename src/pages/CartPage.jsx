@@ -77,7 +77,7 @@ const CartPage = () => {
             ) : (
               <Link
                 onClick={loginWithRedirect}
-                className="capitalize text-center text-sm py-3 md:py-2  w-full rounded-md md:w-1/2 btn"
+                className="capitalize text-center text-base py-3 md:py-2  w-full rounded-md md:w-1/2 btn"
               >
                 Login
               </Link>

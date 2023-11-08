@@ -17,6 +17,8 @@ const AddToCart = ({ product }) => {
     toast.success("Item added to the cart", {
       position: toast.POSITION.BOTTOM_RIGHT,
       autoClose: 2000,
+      pauseOnFocusLoss: false,
+      hideProgressBar: true,
     });
   };
 
@@ -90,7 +92,7 @@ const AddToCart = ({ product }) => {
           </span>
         )}
       </div>
-      <button
+      <div
         className="btn w-40 text-sm mt-1"
         onClick={() => {
           notification();
@@ -103,7 +105,7 @@ const AddToCart = ({ product }) => {
           Add to Cart
         </Link>
         <ToastContainer />
-      </button>
+      </div>
     </>
   );
 };

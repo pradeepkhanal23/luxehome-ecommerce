@@ -37,7 +37,13 @@ const Sort = () => {
           />
         </div>
       </div>
-      <h4 className="break-keep">{products.length} Products found</h4>
+      <h4 className="break-keep">
+        {`${
+          products.length === 0
+            ? "Loading.."
+            : products.length + " products found"
+        }`}
+      </h4>
       <div className="md:w-[50%]  mx-1 w-full bg-black h-[.01rem] "></div>
       <form className="flex items-center gap-2 md:gap-4">
         <label className="break-keep" htmlFor="sort">
