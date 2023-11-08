@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { Hero1, Hero4, Hero1Blur, Hero4Blur } from "../assets/images";
 import { useProgressiveImg } from "../hooks/useProgressiveImg";
-import { useImageBlur } from "../hooks/useImageBlur";
 
 const Hero = () => {
   const [src1, { blur: blur1 }] = useProgressiveImg(Hero1Blur, Hero1);
@@ -35,7 +34,7 @@ const Hero = () => {
               className="w-full h-full object-cover rounded-lg"
               style={{
                 filter: blur1 ? "blur(20px)" : "none",
-                transition: blur1 ? "none" : "filter 0.3s ease-out",
+                transition: blur1 ? "none" : "filter 0.5s ease-in-out",
               }}
             />
 
@@ -45,7 +44,7 @@ const Hero = () => {
               className="w-64 h-32 object-cover absolute -bottom-8 -left-10 rounded-lg"
               style={{
                 filter: blur2 ? "blur(20px)" : "none",
-                transition: blur2 ? "none" : "filter 0.3s ease-out",
+                transition: blur2 ? "none" : "filter 0.5s ease-in-out ",
               }}
             />
           </div>

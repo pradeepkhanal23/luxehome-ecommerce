@@ -2,6 +2,7 @@ import Hero1 from "./hero1.jpg";
 import Hero1Blur from "./hero1-blur.jpg";
 import Hero2 from "./hero2.jpg";
 import Hero3 from "./hero3.jpg";
+import Hero3Blur from "./hero3-blur.jpg";
 import Hero4 from "./hero4.jpg";
 import Hero4Blur from "./hero4-blur.jpg";
 import Hero5 from "./hero5.jpg";
@@ -15,6 +16,7 @@ export {
   Hero4Blur,
   Hero2,
   Hero3,
+  Hero3Blur,
   Hero4,
   Hero5,
   Hero6,

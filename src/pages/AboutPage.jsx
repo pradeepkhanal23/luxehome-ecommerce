@@ -1,9 +1,12 @@
 import { PageHero } from "../components";
-import { Hero3 } from "../assets/images";
+import { Hero3, Hero3Blur } from "../assets/images";
+import { useProgressiveImg } from "../hooks/useProgressiveImg";
 
 // [calc(100vh-6rem)] is the height of the about section
 
 const AboutPage = () => {
+  const [src, { blur: blur }] = useProgressiveImg(Hero3Blur, Hero3);
+
   return (
     <>
       <PageHero title="about" />
@@ -11,9 +14,13 @@ const AboutPage = () => {
         <div className="flex flex-col  gap-x-5 md:flex-row  ">
           <div className="w-full lg:w-1/2">
             <img
+              src={src}
               alt="About us"
               className="object-cover rounded-lg "
-              src={Hero3}
+              style={{
+                filter: blur ? "blur(20px)" : "none",
+                transition: blur ? "none" : "filter 0.5s ease-in-out",
+              }}
             />
           </div>
           <div className="w-full lg:w-1/2 mt-2 md:mt-0">
