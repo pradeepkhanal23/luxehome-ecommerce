@@ -19,6 +19,10 @@ const GridView = ({ products }) => {
                 key={index}
               >
                 <div className="w-auto md:h-52 h-60 cursor-pointer relative bg-gray-300 rounded-lg"></div>
+                <div className="mt-1 flex items-center justify-between ">
+                  <div className="bg-gray-300 w-32 md:w-20 h-4"></div>
+                  <div className="bg-gray-300 w-32 md:w-20 h-4"></div>
+                </div>
               </article>
             );
           })}
