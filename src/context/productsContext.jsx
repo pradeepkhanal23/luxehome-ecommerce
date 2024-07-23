@@ -41,9 +41,8 @@ export const ProductsProvider = ({ children }) => {
   };
 
   const fetchProducts = async (url) => {
-    // dispatch({ type: GET_PRODUCTS_BEGIN });
+    dispatch({ type: GET_PRODUCTS_BEGIN });
     try {
-      console.log("fetching products");
       const response = await axios(url);
       const products = response.data;
 
