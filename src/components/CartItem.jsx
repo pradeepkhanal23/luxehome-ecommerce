@@ -28,6 +28,7 @@ const CartItem = () => {
 
   return (
     <>
+      <ToastContainer limit={5} />
       {cart.map((item) => {
         const { name, id, price, image, amount, color } = item;
 
@@ -85,7 +86,6 @@ const CartItem = () => {
               }}
             >
               <RiDeleteBin7Line className="scale-[1.2]" />
-              <ToastContainer limit={5} />
             </div>
           </article>
         );

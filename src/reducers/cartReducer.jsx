@@ -6,6 +6,8 @@ import {
   TOGGLE_CART_ITEM_AMOUNT,
 } from "../actions";
 
+import { Placeholder } from "../assets/images";
+
 const cartReducer = (state, action) => {
   if (action.type === ADD_TO_CART) {
     const { id, color, amount, product } = action.payload;
@@ -38,10 +40,13 @@ const cartReducer = (state, action) => {
         id: id + color,
         amount,
         color,
-        price: product.price,
-        max: product.stock,
-        image: product.images[0].url,
-        name: product.name,
+        price: product.price || 0,
+        max: product.stock || 1,
+        image:
+          product.images && product.images[0]
+            ? product.images[0].url
+            : Placeholder, // Safeguard added here
+        name: product.name || "unnamed product",
       };
       return {
         ...state,

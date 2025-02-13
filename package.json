@@ -16,7 +16,8 @@
     "build": "vite build",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "dev": "netlify dev"
+    "dev": "concurrently \"netlify dev\" \"npm run server\"",
+    "server": "json-server --watch products.json --port 3001"
   },
   "dependencies": {
     "@auth0/auth0-react": "^2.2.0",
@@ -24,6 +25,7 @@
     "@stripe/stripe-js": "^1.54.2",
     "axios": "^1.4.0",
     "dotenv": "^16.3.1",
+    "json-server": "^1.0.0-beta.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.11.0",
@@ -36,6 +38,7 @@
     "@types/react-dom": "^18.0.11",
     "@vitejs/plugin-react": "^4.0.0",
     "autoprefixer": "^10.4.14",
+    "concurrently": "^9.1.2",
     "eslint": "^8.38.0",
     "eslint-plugin-commonjs": "^1.0.2",
     "eslint-plugin-import": "^2.28.0",
@@ -43,7 +46,7 @@
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.3.4",
-    "netlify-cli": "^15.9.1",
+    "netlify-cli": "^18.0.4",
     "postcss": "^8.4.24",
     "tailwindcss": "^3.3.2",
     "vite": "^4.3.9"

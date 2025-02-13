@@ -8,6 +8,7 @@ import {
   SingleProduct,
   PrivateRoute,
   Checkout,
+  PaymentSuccessPage,
 } from "./pages";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
       {
         path: "cart",
         element: <Cart />,
+      },
+      {
+        path: "payment-success",
+        element: <PaymentSuccessPage />,
       },
       // Use PrivateRoute for the checkout page
       {

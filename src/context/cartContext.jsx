@@ -15,7 +15,7 @@ const CartContext = createContext();
 const getLocalStorageItems = () => {
   let cart = localStorage.getItem("cart");
   if (cart) {
-    return JSON.parse(localStorage.getItem("cart"));
+    return JSON.parse(cart);
   } else {
     return [];
   }

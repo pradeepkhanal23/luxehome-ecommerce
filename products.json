@@ -1,0 +1,180 @@
+{
+  "products": [
+    {
+      "id": "recZkNf2kwmdBcqd0",
+      "name": "Accent Chair",
+      "price": 25999,
+      "image": "https://www.course-api.com/images/store/product-1.jpeg",
+      "colors": ["#ff0000", "#00ff00", "#0000ff"],
+      "company": "Marcos",
+      "description": "This modern accent chair brings an air of sophistication to any room. With a sleek, minimal design and soft, comfortable fabric, it is perfect for your living room, bedroom, or office. Available in bold colors to fit any decor.",
+      "category": "office",
+      "stock": 15,
+      "shipping": true
+    },
+    {
+      "id": "recEHmzvupvT8ZONH",
+      "name": "Albany Sectional",
+      "price": 109999,
+      "image": "https://www.course-api.com/images/store/product-2.jpeg",
+      "colors": ["#000", "#ffb900"],
+      "company": "Liddy",
+      "description": "The Albany sectional offers a spacious seating solution with modular flexibility. Its plush cushions and durable fabric make it a perfect fit for any living room or family space. Enjoy movie nights or casual lounging with this cozy yet stylish sectional.",
+      "category": "living room",
+      "stock": 10
+    },
+    {
+      "id": "rec5NBwZ5zCD9nfF0",
+      "name": "Albany Table",
+      "price": 309999,
+      "image": "https://www.course-api.com/images/store/product-3.jpeg",
+      "colors": ["#ffb900", "#0000ff"],
+      "company": "Liddy",
+      "description": "This statement table from the Albany collection is perfect for your dining or kitchen area. Crafted from solid wood, it offers a blend of modern design with traditional craftsmanship. The rich finish complements any interior style.",
+      "category": "kitchen",
+      "stock": 7
+    },
+    {
+      "id": "recd1jIVIEChmiwhe",
+      "name": "Armchair",
+      "price": 12599,
+      "image": "https://www.course-api.com/images/store/product-4.jpeg",
+      "colors": ["#000", "#00ff00", "#0000ff"],
+      "company": "Marcos",
+      "description": "A compact yet comfortable armchair designed for modern living. Perfect for small spaces or as an accent piece, this chair provides both style and comfort with a variety of color options.",
+      "category": "bedroom",
+      "stock": 20,
+      "shipping": true
+    },
+    {
+      "id": "recotY5Nh00DQFdkm",
+      "name": "Dining Table",
+      "price": 42999,
+      "image": "https://www.course-api.com/images/store/product-5.jpeg",
+      "colors": ["#00ff00", "#0000ff", "#ff0000"],
+      "company": "Ikea",
+      "description": "This stylish and functional dining table from Ikea is perfect for hosting family meals or dinner parties. The clean lines and minimalist design fit into any dining space, making it a must-have for modern homes.",
+      "category": "dining",
+      "stock": 25,
+      "shipping": true
+    },
+    {
+      "id": "rec1Ntk7siEEW9ha1",
+      "name": "Emperor Bed",
+      "price": 23999,
+      "image": "https://www.course-api.com/images/store/product-6.jpeg",
+      "colors": ["#0000ff", "#000"],
+      "company": "Ikea",
+      "description": "The Emperor bed provides an elegant yet affordable solution for your bedroom. With sturdy construction and a stylish headboard, it’s designed to give you a restful night’s sleep in both comfort and style.",
+      "category": "bedroom",
+      "stock": 12,
+      "shipping": true
+    },
+    {
+      "id": "recNZ0koOqEmilmoz",
+      "name": "Entertainment Center",
+      "price": 59999,
+      "image": "https://www.course-api.com/images/store/product-7.jpeg",
+      "featured": true,
+      "colors": ["#000", "#ff0000"],
+      "company": "Caressa",
+      "description": "This modern entertainment center is designed to hold all of your entertainment equipment while keeping everything organized. With multiple compartments for media storage, it combines practicality and style.",
+      "category": "living room",
+      "stock": 5,
+      "shipping": true
+    },
+    {
+      "id": "recrfxv3EwpvJwvjq",
+      "name": "High-Back Bench",
+      "price": 39999,
+      "image": "https://www.course-api.com/images/store/product-8.jpeg",
+      "featured": true,
+      "colors": ["#000", "#00ff00"],
+      "company": "Ikea",
+      "description": "A stylish high-back bench that can fit into various spaces in your home. Ideal for entryways, living rooms, or bedrooms, it offers ample seating and a modern aesthetic.",
+      "category": "office",
+      "stock": 8,
+      "shipping": true
+    },
+    {
+      "id": "recoW8ecgjtKx2Sj2",
+      "name": "Leather Chair",
+      "price": 20099,
+      "image": "https://www.course-api.com/images/store/product-9.jpeg",
+      "colors": ["#ff0000", "#ffb900", "#00ff00"],
+      "company": "Caressa",
+      "description": "Crafted with high-quality leather, this chair exudes elegance. Its comfortable design and sturdy construction make it perfect for both home offices and living rooms.",
+      "category": "bedroom",
+      "stock": 6
+    },
+    {
+      "id": "recEOA6qtDag1hRbU",
+      "name": "Leather Sofa",
+      "price": 99999,
+      "image": "https://www.course-api.com/images/store/product-10.jpeg",
+      "colors": ["#00ff00", "#0000ff"],
+      "company": "Caressa",
+      "description": "This luxurious leather sofa combines comfort with modern design. Perfect for creating a cozy yet stylish living room, it offers plush seating and durable leather material that gets better with age.",
+      "category": "office",
+      "stock": 4
+    },
+    {
+      "id": "recoAJYUCuEKxcPSr",
+      "name": "Modern Bookshelf",
+      "price": 31999,
+      "image": "https://www.course-api.com/images/store/product-11.jpeg",
+      "featured": true,
+      "colors": ["#ffb900", "#ff0000", "#00ff00"],
+      "company": "Caressa",
+      "description": "Add a touch of elegance to your home with this modern bookshelf. Perfect for storing books, decor, or other items, this piece adds function and style to any room in the house.",
+      "category": "kids",
+      "stock": 15
+    },
+    {
+      "id": "recQ0fMd8T0Vk211E",
+      "name": "Modern Poster",
+      "price": 3099,
+      "image": "https://www.course-api.com/images/store/product-12.jpeg",
+      "colors": ["#000"],
+      "company": "Liddy",
+      "description": "This modern poster brings a fresh, artistic vibe to any space. Featuring minimalistic design and bold colors, it’s perfect for modern apartments or offices.",
+      "category": "living room",
+      "stock": 30,
+      "shipping": true
+    },
+    {
+      "id": "rec7CjDWKRgNQtrKe",
+      "name": "Shelf",
+      "price": 30999,
+      "image": "https://www.course-api.com/images/store/product-13.jpeg",
+      "colors": ["#00ff00"],
+      "company": "Ikea",
+      "description": "A sleek, modern shelf that provides versatile storage for books, decor, and personal items. The minimalist design is perfect for contemporary homes and offices.",
+      "category": "living room",
+      "stock": 18
+    },
+    {
+      "id": "recF0KpwlkF7e8kXO",
+      "name": "Simple Chair",
+      "price": 109999,
+      "image": "https://www.course-api.com/images/store/product-14.jpeg",
+      "colors": ["#0000ff"],
+      "company": "Liddy",
+      "description": "This chair combines comfort and simplicity. Its minimalist design works with a variety of home decors, from modern to traditional.",
+      "category": "living room",
+      "stock": 9,
+      "shipping": true
+    },
+    {
+      "id": "recs5BSVU3qQrOj4E",
+      "name": "Sofa Set",
+      "price": 129999,
+      "image": "https://www.course-api.com/images/store/product-15.jpeg",
+      "colors": ["#00ff00", "#ffb900"],
+      "company": "Marcos",
+      "description": "This elegant sofa set is perfect for large living rooms or family spaces. With soft cushions and a neutral color palette, it offers both style and comfort.",
+      "category": "living room",
+      "stock": 4
+    }
+  ]
+}

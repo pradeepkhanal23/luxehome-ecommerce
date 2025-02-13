@@ -46,6 +46,9 @@ const CheckoutForm = () => {
     const { error } = await stripe.confirmPayment({
       //`Elements` instance that was used to create the Payment Element
       elements,
+      confirmParams: {
+        return_url: `${window.location.origin}/payment-success`, // Set your return URL here
+      },
       // redirect: "if_required",
     });
 
