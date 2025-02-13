@@ -48,6 +48,9 @@ export const services = [
   },
 ];
 
-export const products_url = "api/products";
+// Checking for production environment and set the correct API URL
 
-export const single_product_url = `api/products/`;
+const apiUrl = import.meta.env.VITE_API_URL || "http://localhost:3001"; // Default to localhost for dev
+
+export const products_url = `${apiUrl}/products`;
+export const single_product_url = `${apiUrl}/products/`;
