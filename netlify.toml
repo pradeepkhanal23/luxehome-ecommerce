@@ -3,6 +3,6 @@ functions = './functions'
 
 
 [dev]
-targetPort = 3000
+targetPort = 8888
 
 
