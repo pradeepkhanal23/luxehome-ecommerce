@@ -16,8 +16,7 @@
     "build": "vite build",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "dev": "concurrently \"netlify dev\" \"npm run server\"",
-    "server": "json-server --watch products.json --port 3001"
+    "dev": "netlify dev"
   },
   "dependencies": {
     "@auth0/auth0-react": "^2.2.0",

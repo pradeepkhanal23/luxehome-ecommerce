@@ -50,7 +50,8 @@ export const services = [
 
 // Checking for production environment and set the correct API URL
 
-const apiUrl = import.meta.env.VITE_API_URL || "http://localhost:3001"; // Default to localhost for strapi dev
+const apiUrl = import.meta.env.VITE_APP_URL || "http://localhost:8888";
 
+export const checkoutUrl = `${apiUrl}/.netlify/functions/create-payment-intent`;
 export const products_url = `${apiUrl}/products`;
 export const single_product_url = `${apiUrl}/products/`;

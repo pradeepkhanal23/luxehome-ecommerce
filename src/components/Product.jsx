@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 import { BsSearch } from "react-icons/bs";
 import { formatPrice } from "../utils/helpers";
 
-const Product = ({ image, name, price, id }) => {
+const Product = ({ image, name, price, documentId }) => {
   return (
     <article className=" flex flex-col gap-5 cursor-pointer ">
-      <Link to={`products/${id}`}>
+      <Link to={`products/${documentId}`}>
         <div className="w-full h-64 relative">
           <img
             src={image}
