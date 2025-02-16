@@ -36,7 +36,13 @@ const ListView = ({ products }) => {
         <>
           <>
             {products.map((product) => {
-              const { image, id, name, price, description } = product;
+              const {
+                image,
+                documentId: id,
+                name,
+                price,
+                description,
+              } = product;
 
               return (
                 <article
