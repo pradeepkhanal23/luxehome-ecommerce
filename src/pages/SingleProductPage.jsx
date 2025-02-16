@@ -5,8 +5,14 @@ import { useProductsContext } from "../context/productsContext";
 import { single_product_url as url } from "../utils/constants";
 import Loader from "../components/Loader";
 
+// importing static images for the product except the main image which is dynamic
+import Image1 from "../assets/images/hero3.jpg";
+import Image2 from "../assets/images/hero4.jpg";
+import Image3 from "../assets/images/hero5.jpg";
+import Image4 from "../assets/images/hero6.jpg";
+
 const SingleProductPage = () => {
-  const { id } = useParams();
+  const { documentId } = useParams();
 
   const navigate = useNavigate();
   const {
@@ -17,9 +23,9 @@ const SingleProductPage = () => {
   } = useProductsContext();
 
   useEffect(() => {
-    fetchSingleProduct(`${url}${id}`);
+    fetchSingleProduct(`${url}${documentId}`);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [id]);
+  }, [documentId]);
 
   useEffect(() => {
     if (error) {
@@ -38,7 +44,15 @@ const SingleProductPage = () => {
     return <h1>This was an Error..</h1>;
   }
 
-  const { name, stock, images } = product;
+  const { name, stock, image } = product;
+
+  const images = [
+    { url: image, id: 1 },
+    { url: Image1, id: 2 },
+    { url: Image2, id: 3 },
+    { url: Image3, id: 4 },
+    { url: Image4, id: 5 },
+  ];
 
   return (
     <>
