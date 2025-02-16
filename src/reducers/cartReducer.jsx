@@ -12,6 +12,8 @@ const cartReducer = (state, action) => {
   if (action.type === ADD_TO_CART) {
     const { id, color, amount, product } = action.payload;
 
+    console.log(product);
+
     const tempCartItem = state.cart.find((item) => item.id === id + color);
 
     if (tempCartItem) {
@@ -42,12 +44,10 @@ const cartReducer = (state, action) => {
         color,
         price: product.price || 0,
         max: product.stock || 1,
-        image:
-          product.images && product.images[0]
-            ? product.images[0].url
-            : Placeholder, // Safeguard added here
+        image: product?.image || Placeholder,
         name: product.name || "unnamed product",
       };
+
       return {
         ...state,
         cart: [...state.cart, newItem],
