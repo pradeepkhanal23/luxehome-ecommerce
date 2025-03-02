@@ -50,7 +50,7 @@ export const services = [
 
 // Checking for production environment and set the correct API URL
 
-const apiUrl = "http://localhost:8888";
+const apiUrl = import.meta.VITE_APP_URL || "https://localhost:8888";
 
 export const checkoutUrl = `${apiUrl}/.netlify/functions/create-payment-intent`;
 export const products_url = `${apiUrl}/.netlify/functions/products`;
