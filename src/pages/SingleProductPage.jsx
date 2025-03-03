@@ -46,7 +46,6 @@ const SingleProductPage = () => {
   }
 
   const { name, stock, image } = product;
-  console.log(product);
 
   const images = [
     { url: image, id: 1 },

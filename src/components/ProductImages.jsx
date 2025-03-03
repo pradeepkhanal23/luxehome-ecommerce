@@ -4,8 +4,6 @@ import { useState } from "react";
 const ProductImages = ({ images = [{ url: "" }] }) => {
   const [mainImage, setMainImage] = useState(images[0]);
 
-  console.log(mainImage);
-
   return (
     <section className="p-3 flex flex-col gap-5">
       <img

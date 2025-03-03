@@ -44,8 +44,6 @@ export const ProductsProvider = ({ children }) => {
     try {
       const { data, error } = await supabase.from("products").select("*"); // Fetch all columns (adjust if needed)
 
-      console.log(data);
-
       if (error) throw error;
 
       dispatch({ type: GET_PRODUCTS_SUCCESS, payload: data });
