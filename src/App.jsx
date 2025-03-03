@@ -11,6 +11,7 @@ import {
   PaymentSuccessPage,
 } from "./pages";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Testing from "./components/Testing";
 
 const router = createBrowserRouter([
   {
@@ -28,7 +29,11 @@ const router = createBrowserRouter([
         element: <Products />,
       },
       {
-        path: "products/:documentId",
+        path: "testing",
+        element: <Testing />,
+      },
+      {
+        path: "products/:id",
         element: <SingleProduct />,
       },
       {

@@ -9,7 +9,7 @@ import UserProvider from "./context/userContext.jsx";
 import { Auth0Provider } from "@auth0/auth0-react";
 import { AuthWrapper } from "./pages/index.jsx";
 import { ModalProvider } from "./context/modalContext.jsx";
-import Testing from "./components/Testing.jsx";
+import { SupabaseProvider } from "./context/supabaseContext";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -20,19 +20,21 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         redirect_uri: window.location.origin,
       }}
     >
-      <AuthWrapper>
-        <UserProvider>
-          <ProductsProvider>
-            <FilterProvider>
-              <CartProvider>
-                <ModalProvider>
-                  <App />
-                </ModalProvider>
-              </CartProvider>
-            </FilterProvider>
-          </ProductsProvider>
-        </UserProvider>
-      </AuthWrapper>
+      <SupabaseProvider>
+        <AuthWrapper>
+          <UserProvider>
+            <ProductsProvider>
+              <FilterProvider>
+                <CartProvider>
+                  <ModalProvider>
+                    <App />
+                  </ModalProvider>
+                </CartProvider>
+              </FilterProvider>
+            </ProductsProvider>
+          </UserProvider>
+        </AuthWrapper>
+      </SupabaseProvider>
     </Auth0Provider>
     {/* <Testing /> */}
   </React.StrictMode>

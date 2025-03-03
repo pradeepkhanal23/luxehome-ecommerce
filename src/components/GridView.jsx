@@ -30,8 +30,8 @@ const GridView = ({ products }) => {
       ) : (
         <>
           {products &&
-            products.map((product) => {
-              const { documentId: id, name, price, image } = product;
+            products.map((product, i) => {
+              const { id, name, price, image } = product;
 
               return (
                 <article

@@ -9,7 +9,7 @@ const ProductInfo = ({ product }) => {
     description,
     stock,
     stars,
-    documentId: sku,
+    id: sku,
     company,
     reviews,
   } = product;

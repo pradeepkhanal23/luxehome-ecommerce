@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Hero1, Hero4, Hero1Blur, Hero4Blur } from "../assets/images";
 import { useProgressiveImg } from "../hooks/useProgressiveImg";
+import React from "react";
 
 const Hero = () => {
   const [src1, { blur: blur1 }] = useProgressiveImg(Hero1Blur, Hero1);

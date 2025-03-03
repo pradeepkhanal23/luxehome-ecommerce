@@ -1,20 +1,17 @@
 /* eslint-disable react/prop-types */
-import { createContext, useContext, useReducer } from "react";
-// eslint-disable-next-line no-unused-vars
-import React, { useEffect } from "react";
+import { createContext, useContext, useReducer, useEffect } from "react";
 import {
   SIDEBAR_OPEN,
   SIDEBAR_CLOSE,
-  GET_PRODUCTS_SUCCESS,
   GET_PRODUCTS_BEGIN,
+  GET_PRODUCTS_SUCCESS,
   GET_PRODUCTS_ERROR,
   GET_SINGLE_PRODUCT_BEGIN,
   GET_SINGLE_PRODUCT_SUCCESS,
   GET_SINGLE_PRODUCT_ERROR,
 } from "../actions";
 import reducer from "../reducers/productsReducer";
-import axios from "axios";
-import { products_url as url } from "../utils/constants";
+import { useSupabase } from "../context/supabaseContext";
 
 const initialState = {
   isSidebarOpen: false,
@@ -30,44 +27,55 @@ const initialState = {
 const ProductsContext = createContext();
 
 export const ProductsProvider = ({ children }) => {
-  // eslint-disable-next-line no-unused-vars
   const [state, dispatch] = useReducer(reducer, initialState);
+  const supabase = useSupabase(); // Get the shared Supabase client
 
   const sidebarOpen = () => {
     dispatch({ type: SIDEBAR_OPEN });
   };
+
   const sidebarClose = () => {
     dispatch({ type: SIDEBAR_CLOSE });
   };
 
-  const fetchProducts = async (url) => {
+  // Fetch all products from Supabase
+  const fetchProducts = async () => {
     dispatch({ type: GET_PRODUCTS_BEGIN });
     try {
-      const response = await axios(url);
+      const { data, error } = await supabase.from("products").select("*"); // Fetch all columns (adjust if needed)
 
-      const products = response.data;
+      console.log(data);
 
-      dispatch({ type: GET_PRODUCTS_SUCCESS, payload: products });
+      if (error) throw error;
+
+      dispatch({ type: GET_PRODUCTS_SUCCESS, payload: data });
     } catch (error) {
+      console.error("Error fetching products:", error.message);
       dispatch({ type: GET_PRODUCTS_ERROR });
     }
   };
 
-  const fetchSingleProduct = async (url) => {
+  // Fetch single product by ID from Supabase
+  const fetchSingleProduct = async (id) => {
     dispatch({ type: GET_SINGLE_PRODUCT_BEGIN });
     try {
-      const response = await axios(`${url}`);
+      const { data, error } = await supabase
+        .from("products")
+        .select("*")
+        .eq("id", id) // Filter by ID
+        .single(); // Return a single object
 
-      const singleProduct = response.data;
+      if (error) throw error;
 
-      dispatch({ type: GET_SINGLE_PRODUCT_SUCCESS, payload: singleProduct });
+      dispatch({ type: GET_SINGLE_PRODUCT_SUCCESS, payload: data });
     } catch (error) {
+      console.error("Error fetching single product:", error.message);
       dispatch({ type: GET_SINGLE_PRODUCT_ERROR });
     }
   };
 
   useEffect(() => {
-    fetchProducts(url);
+    fetchProducts(); // Fetch all products on mount
   }, []);
 
   return (
@@ -79,7 +87,6 @@ export const ProductsProvider = ({ children }) => {
   );
 };
 
-// eslint-disable-next-line react-refresh/only-export-components
 export const useProductsContext = () => {
   return useContext(ProductsContext);
 };

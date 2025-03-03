@@ -2,7 +2,6 @@ import { useParams, useNavigate, Link } from "react-router-dom";
 import { useEffect } from "react";
 import { PageHero, ProductImages, ProductInfo, AddToCart } from "../components";
 import { useProductsContext } from "../context/productsContext";
-import { single_product_url as url } from "../utils/constants";
 import Loader from "../components/Loader";
 
 // importing static images for the product except the main image which is dynamic
@@ -12,7 +11,7 @@ import Image3 from "../assets/images/hero5.jpg";
 import Image4 from "../assets/images/hero6.jpg";
 
 const SingleProductPage = () => {
-  const { documentId } = useParams();
+  const { id } = useParams();
 
   const navigate = useNavigate();
   const {
@@ -23,9 +22,11 @@ const SingleProductPage = () => {
   } = useProductsContext();
 
   useEffect(() => {
-    fetchSingleProduct(`${url}${documentId}`);
+    if (id) {
+      fetchSingleProduct(id);
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [documentId]);
+  }, [id]);
 
   useEffect(() => {
     if (error) {
@@ -45,6 +46,7 @@ const SingleProductPage = () => {
   }
 
   const { name, stock, image } = product;
+  console.log(product);
 
   const images = [
     { url: image, id: 1 },
